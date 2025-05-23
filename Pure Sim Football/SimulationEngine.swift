@@ -1,37 +1,39 @@
 import Foundation
 
-// Define RawScheduledGame at a scope accessible to SimulationEngine,
-// or move to Models.swift if preferred. This makes it a top-level struct.
+// Define RawScheduledGame at a scope accessible to SimulationEngine.
+// Ensure this is the ONLY definition of RawScheduledGame in your project.
+// If you previously had it in Models.swift, REMOVE IT FROM THERE.
 struct RawScheduledGame: Codable, Hashable {
-    let week: Int
-    let awayTeamRealName: String
-    let homeTeamRealName: String
-    let neutralSiteLocation: String?
+let week: Int
+let awayTeamRealName: String
+let homeTeamRealName: String
+let neutralSiteLocation: String?
 }
 
+// Ensure this struct SimulationEngine is defined ONLY ONCE in this file.
 struct SimulationEngine {
 
-    // This map is CRUCIAL.
-    static let realToFictionalTeamMap: [String: (location: String, nickname: String)] = [
-        "Arizona Cardinals": ("Arizona", "Inferno"), "Atlanta Falcons": ("Atlanta", "Aviators"),
-        "Baltimore Ravens": ("Baltimore", "Nightwings"), "Buffalo Bills": ("Buffalo", "Stallions"),
-        "Carolina Panthers": ("Charlotte", "Prowlers"), "Chicago Bears": ("Chicago", "Bruisers"),
-        "Cincinnati Bengals": ("Cincinnati", "Stripes"), "Cleveland Browns": ("Cleveland", "Rockers"),
-        "Dallas Cowboys": ("Dallas", "Stars"), "Denver Broncos": ("Denver", "Peaks"),
-        "Detroit Lions": ("Detroit", "Automata"), "Green Bay Packers": ("Green Bay", "Voyageurs"),
-        "Houston Texans": ("Houston", "Comets"), "Indianapolis Colts": ("Indianapolis", "Racers"),
-        "Jacksonville Jaguars": ("Jacksonville", "Current"), "Kansas City Chiefs": ("Kansas City", "Scouts"),
-        "Las Vegas Raiders": ("Las Vegas", "Aces"), "Los Angeles Chargers": ("Los Angeles", "Thunderbolts"),
-        "Los Angeles Rams": ("Los Angeles", "Stags"), "Miami Dolphins": ("Miami", "Tides"),
-        "Minnesota Vikings": ("Minnesota", "Norsemen"),
-        "New England Patriots": ("New England", "Minutemen"),
-        "New Orleans Saints": ("New Orleans", "Revelers"), "New York Giants": ("New York", "Goliaths"),
-        "New York Jets": ("New York", "Knights"), "Philadelphia Eagles": ("Philadelphia", "Freedom"),
-        "Pittsburgh Steelers": ("Pittsburgh", "Forgers"), "San Francisco 49ers": ("San Francisco", "Prospectors"),
-        "Seattle Seahawks": ("Seattle", "Cascades"), "Tampa Bay Buccaneers": ("Tampa Bay", "Cannons"),
-        "Tennessee Titans": ("Tennessee", "Rhythm"),
-        "Washington Commanders": ("Washington", "Capitals")
-    ]
+// This map is CRUCIAL.
+static let realToFictionalTeamMap: [String: (location: String, nickname: String)] = [
+"Arizona Cardinals": ("Arizona", "Inferno"), "Atlanta Falcons": ("Atlanta", "Aviators"),
+"Baltimore Ravens": ("Baltimore", "Nightwings"), "Buffalo Bills": ("Buffalo", "Stallions"),
+"Carolina Panthers": ("Charlotte", "Prowlers"), "Chicago Bears": ("Chicago", "Bruisers"),
+"Cincinnati Bengals": ("Cincinnati", "Stripes"), "Cleveland Browns": ("Cleveland", "Rockers"),
+"Dallas Cowboys": ("Dallas", "Stars"), "Denver Broncos": ("Denver", "Peaks"),
+"Detroit Lions": ("Detroit", "Automata"), "Green Bay Packers": ("Green Bay", "Voyageurs"),
+"Houston Texans": ("Houston", "Comets"), "Indianapolis Colts": ("Indianapolis", "Racers"),
+"Jacksonville Jaguars": ("Jacksonville", "Current"), "Kansas City Chiefs": ("Kansas City", "Scouts"),
+"Las Vegas Raiders": ("Las Vegas", "Aces"), "Los Angeles Chargers": ("Los Angeles", "Thunderbolts"),
+"Los Angeles Rams": ("Los Angeles", "Stags"), "Miami Dolphins": ("Miami", "Tides"),
+"Minnesota Vikings": ("Minnesota", "Norsemen"),
+"New England Patriots": ("New England", "Minutemen"),
+"New Orleans Saints": ("New Orleans", "Revelers"), "New York Giants": ("New York", "Goliaths"),
+"New York Jets": ("New York", "Knights"), "Philadelphia Eagles": ("Philadelphia", "Freedom"),
+"Pittsburgh Steelers": ("Pittsburgh", "Forgers"), "San Francisco 49ers": ("San Francisco", "Prospectors"),
+"Seattle Seahawks": ("Seattle", "Cascades"), "Tampa Bay Buccaneers": ("Tampa Bay", "Cannons"),
+"Tennessee Titans": ("Tennessee", "Rhythm"),
+"Washington Commanders": ("Washington", "Capitals")
+]
 
     // --- 2025 NFL SCHEDULE DATA ---
     // YOU NEED TO POPULATE THIS ARRAY FULLY with all 272 unique games.
@@ -154,17 +156,21 @@ struct SimulationEngine {
                // Week 13: Bills @ Steelers (already listed)
                RawScheduledGame(week: 16, awayTeamRealName: "Pittsburgh Steelers", homeTeamRealName: "Detroit Lions", neutralSiteLocation: nil),
 
-    static func generateSchedule(
+        // generateSchedule function
+        static func generateSchedule(
         for leagueTeams: [Team],
         gamesToPlayPerTeamTarget: Int,
         isFirstSeason: Bool,
         isUsingDefaultTeams: Bool,
         leagueStructure: (conferences: Int, divisionsPerConference: Int)
-    ) -> [Game] {
-        
+        ) -> [Game] {
+
         guard !leagueTeams.isEmpty, gamesToPlayPerTeamTarget > 0 else { return [] }
 
-        if isFirstSeason && isUsingDefaultTeams && leagueTeams.count == 32 && !real2025ScheduleData.isEmpty {
+        // Check if real2025ScheduleData has more than just placeholder data
+        let hasMeaningfulRealScheduleData = real2025ScheduleData.count > 5 // Arbitrary number greater than 1-2 examples
+
+        if isFirstSeason && isUsingDefaultTeams && leagueTeams.count == 32 && hasMeaningfulRealScheduleData {
             print("Attempting to generate schedule from real 2025 NFL data.")
             var generatedGames: [Game] = []
             var gamesScheduledCountPerTeam: [UUID: Int] = Dictionary(uniqueKeysWithValues: leagueTeams.map { ($0.id, 0) })
@@ -203,7 +209,8 @@ struct SimulationEngine {
             
             print("Generated \(generatedGames.count) unique games from Real 2025 Schedule data.")
             let expectedGamesInFullRealSchedule = (leagueTeams.count * 17) / 2
-            if generatedGames.count >= expectedGamesInFullRealSchedule - 16 {
+            // Adjusted threshold to be more lenient if data is partially filled
+            if generatedGames.count >= expectedGamesInFullRealSchedule - (leagueTeams.count * 2) {
                 print("Using real schedule data.")
                 return generatedGames.sorted {
                     if $0.week != $1.week { return $0.week < $1.week }
@@ -211,11 +218,11 @@ struct SimulationEngine {
                     return $0.awayTeamName < $1.awayTeamName
                 }
             } else {
-                print("Real 2025 schedule data was insufficient (\(generatedGames.count) games generated vs expected \(expectedGamesInFullRealSchedule)). Falling back to random.")
+                print("Real 2025 schedule data was insufficient (\(generatedGames.count) games generated vs expected ~\(expectedGamesInFullRealSchedule)). Falling back to random generation.")
             }
         }
 
-        print("Generating random schedule with custom rules for \(gamesToPlayPerTeamTarget) games per team...")
+        print("Generating random schedule for \(gamesToPlayPerTeamTarget) games per team...")
         var schedule: [Game] = []
         var gamesPlayedCounts: [UUID: Int] = Dictionary(uniqueKeysWithValues: leagueTeams.map { ($0.id, 0) })
         let teamsDict = Dictionary(uniqueKeysWithValues: leagueTeams.map { ($0.id, $0) })
@@ -260,33 +267,36 @@ struct SimulationEngine {
             let team1 = teamsDict[teamId]!; while (gamesPlayedCounts[teamId] ?? 0) < gamesToPlayPerTeamTarget {
                 let potentialOpponents = leagueTeams.filter { $0.id != teamId && (gamesPlayedCounts[$0.id] ?? 0) < gamesToPlayPerTeamTarget }
                 if let team2 = potentialOpponents.randomElement() {
-                    var weekForExtraGame = 1;
-                    var foundWeek = false
-                    for w in 1..<(finalWeekDesignator) {
-                        let t1Plays = schedule.contains{$0.week==w && ($0.homeTeamID==team1.id || $0.awayTeamID==team1.id)}
-                        let t2Plays = schedule.contains{$0.week==w && ($0.homeTeamID==team2.id || $0.awayTeamID==team2.id)}
-                        if !t1Plays && !t2Plays { weekForExtraGame=w; foundWeek=true; break }
+                    var weekForExtraGame = 1; var foundWeek = false
+                    let upperRandomBound = finalWeekDesignator > 1 ? finalWeekDesignator : 2
+                    if upperRandomBound > 1 { // Ensure range is valid for Int.random
+                        for w in 1..<upperRandomBound {
+                            let t1Plays = schedule.contains{$0.week==w && ($0.homeTeamID==team1.id || $0.awayTeamID==team1.id)}
+                            let t2Plays = schedule.contains{$0.week==w && ($0.homeTeamID==team2.id || $0.awayTeamID==team2.id)}
+                            if !t1Plays && !t2Plays { weekForExtraGame=w; foundWeek=true; break }
+                        }
+                        if !foundWeek { weekForExtraGame = Int.random(in: 1..<upperRandomBound) }
+                    } else { // Fallback if finalWeekDesignator is 1 (very short season)
+                        weekForExtraGame = 1
                     }
-                    if !foundWeek { weekForExtraGame = Int.random(in: 1..<(finalWeekDesignator)) }
+
 
                     let homeTeam = Bool.random() ? team1 : team2; let awayTeam = (homeTeam.id == team1.id) ? team2 : team1
                     schedule.append(Game(week: weekForExtraGame, homeTeamID: homeTeam.id, awayTeamID: awayTeam.id, homeTeamName: homeTeam.name, awayTeamName: awayTeam.name, homeTeamLocation: homeTeam.location, awayTeamLocation: awayTeam.location))
                     gamesPlayedCounts[homeTeam.id, default: 0] += 1; gamesPlayedCounts[awayTeam.id, default: 0] += 1
-                } else { print("Could not fill schedule for \(team1.name). Games: \(gamesPlayedCounts[teamId] ?? 0)/\(gamesToPlayPerTeamTarget)"); break }
+                } else { print("Could not fill schedule for \(team1.name)."); break }
             }
         }
         print("Final random schedule: \(schedule.count) games. Counts:"); gamesPlayedCounts.forEach { print("Team \(teamsDict[$0.key]?.name ?? "?"): \($0.value)") }
-        
+
         return schedule.sorted {
             if $0.week != $1.week { return $0.week < $1.week }
-            // Ensure names being compared are not nil before comparison if they were optional
-            // Game struct has non-optional names, so this is fine.
             if $0.homeTeamName != $1.homeTeamName { return $0.homeTeamName < $1.homeTeamName }
             return $0.awayTeamName < $1.awayTeamName
         }
-    }
+        }
 
-    static func simulateGame(homeTeam: Team, awayTeam: Team) -> (homeScore: Int, awayScore: Int, isTie: Bool) {
+        static func simulateGame(homeTeam: Team, awayTeam: Team) -> (homeScore: Int, awayScore: Int, isTie: Bool) {
         let homeBaseStrength = homeTeam.overallRating; let awayBaseStrength = awayTeam.overallRating
         let homeAdvantage = 5; let skillDifference = homeBaseStrength + homeAdvantage - awayBaseStrength
         var homeScore = 10 + Int.random(in: 0...20); var awayScore = 10 + Int.random(in: 0...20)
@@ -295,5 +305,293 @@ struct SimulationEngine {
         homeScore = max(0, homeScore); awayScore = max(0, awayScore)
         let isTieGame = homeScore == awayScore
         return (homeScore, awayScore, isTieGame)
-    }
-}
+        }
+
+
+        } // This is the final brace for struct SimulationEngine
+
+        </immersive>
+
+        2. ScheduleView.swift (Corrected)
+
+        This version was provided in the previous response and should address its specific errors. Key things were defining GameRowView (or ensuring it's accessible), defining resetSchedule, handling the 3-part tuple from simulateGame, and fixing brace/syntax errors.
+
+        <immersive type="code" title="ScheduleView.swift (Re-provide Corrected)" id="schedule_view_fix_4">
+
+        Swift
+        import SwiftUI
+
+        // GameRowView should be defined here if not in its own file and only used by ScheduleView.
+        // Ensure this is the ONLY definition of GameRowView.
+        struct GameRowView: View {
+        let game: Game
+        let homeTeam: Team?
+        let awayTeam: Team?
+
+        var body: some View {
+        HStack {
+        VStack(alignment: .leading, spacing: 2) {
+        HStack {
+        Circle().fill(awayTeam?.color ?? .gray).frame(width: 10, height: 10)
+        Text("(game.awayTeamLocation) (game.awayTeamName)")
+        }
+        Text("@").font(.caption).foregroundColor(.gray).padding(.leading, 15)
+        HStack {
+        Circle().fill(homeTeam?.color ?? .gray).frame(width: 10, height: 10)
+        Text("(game.homeTeamLocation) (game.homeTeamName)")
+        }
+        }
+        Spacer()
+        if game.isPlayed {
+        Text("(game.awayScore ?? 0) - (game.homeScore ?? 0)")
+        .bold()
+        .foregroundColor( (game.awayScore ?? 0 > game.homeScore ?? 0) ? .primary :
+        ( (game.homeScore ?? 0 > game.awayScore ?? 0) ? .secondary : .primary ) )
+        } else {
+        Text("vs").font(.caption).foregroundColor(.gray)
+        }
+        }
+        .padding(.vertical, 4)
+        }
+
+
+        }
+
+        struct ScheduleView: View {
+        @Binding var league: League
+
+        // Using functions for computed properties that depend on league state for clarity
+        private func gamesByWeek() -> [Int: [Game]] {
+        Dictionary(grouping: league.schedule, by: { $0.week })
+        }
+        private func sortedWeeks() -> [Int] {
+        gamesByWeek().keys.sorted()
+        }
+
+        private func nextUnplayedWeek() -> Int? {
+        for week in league.currentWeek...league.gamesPerSeason {
+        if gamesByWeek()[week]?.contains(where: { !$0.isPlayed }) == true {
+        return week
+        }
+        }
+        if !allGamesPlayed() { // Check any past unplayed games
+        return league.schedule.filter { !$0.isPlayed }.map { $0.week }.min()
+        }
+        return nil
+        }
+
+        private func allGamesPlayed() -> Bool {
+        league.schedule.allSatisfy { $0.isPlayed }
+        }
+
+        var body: some View { // This ensures conformance to View
+        List {
+        Section(header: Text("Season Progress: Week (league.currentWeek) of (league.gamesPerSeason)")) {
+        if league.schedule.isEmpty {
+        Text("No schedule generated for (league.name).").foregroundColor(.gray).padding()
+        } else {
+        ForEach(sortedWeeks(), id: .self) { weekNumber in
+        Section(header: Text("Week (weekNumber)")) {
+        ForEach(gamesByWeek()[weekNumber] ?? []) { game in // Game is Identifiable
+        GameRowView(game: game, homeTeam: team(byId: game.homeTeamID), awayTeam: team(byId: game.awayTeamID))
+        }
+        }
+        }
+        }
+        }
+        }
+        .navigationTitle("(league.name) Schedule")
+        .toolbar {
+        ToolbarItemGroup(placement: .bottomBar) {
+        Button("Sim Week") { simulateCurrentWeek() }
+        .disabled((nextUnplayedWeek() == nil) || (nextUnplayedWeek()! > league.gamesPerSeason))
+
+                Button("To Mid-Season") { simulateToWeek(league.tradeDeadlineWeek) }
+                     .disabled((nextUnplayedWeek() == nil) || (nextUnplayedWeek()! >= league.tradeDeadlineWeek) || (nextUnplayedWeek()! > league.gamesPerSeason))
+
+                Button("To Playoffs") { simulateToWeek(league.gamesPerSeason) }
+                    .disabled((nextUnplayedWeek() == nil) || allGamesPlayed())
+                
+                Spacer()
+                
+                Button { resetSchedule() } label: { Image(systemName: "arrow.counterclockwise") }
+            }
+        }
+        }
+
+        func team(byId id: UUID) -> Team? {
+        league.teams.first(where: { $0.id == id })
+        }
+
+        func updateTeamStats(homeTeamID: UUID, awayTeamID: UUID, homeScore: Int, awayScore: Int, isTie: Bool) {
+        guard let homeTeamIndex = league.teams.firstIndex(where: { $0.id == homeTeamID }),
+        let awayTeamIndex = league.teams.firstIndex(where: { $0.id == awayTeamID }) else {
+        print("Error: Could not find teams to update stats."); return
+        }
+
+        var homeTeam = league.teams[homeTeamIndex]
+        var awayTeam = league.teams[awayTeamIndex]
+
+        homeTeam.pointsFor += homeScore
+        homeTeam.pointsAgainst += awayScore
+        awayTeam.pointsFor += awayScore
+        awayTeam.pointsAgainst += homeScore
+
+        let homeTeamConferenceId = homeTeam.conferenceId
+        let homeTeamDivisionId = homeTeam.divisionId
+        let awayTeamConferenceId = awayTeam.conferenceId
+        let awayTeamDivisionId = awayTeam.divisionId
+
+        if isTie {
+            homeTeam.ties += 1; awayTeam.ties += 1
+            if homeTeamConferenceId == awayTeamConferenceId {
+                homeTeam.conferenceTies += 1; awayTeam.conferenceTies += 1
+                if homeTeamDivisionId == awayTeamDivisionId {
+                    homeTeam.divisionalTies += 1; awayTeam.divisionalTies += 1
+                }
+            }
+        } else if homeScore > awayScore {
+            homeTeam.wins += 1; awayTeam.losses += 1
+            if homeTeamConferenceId == awayTeamConferenceId {
+                homeTeam.conferenceWins += 1; awayTeam.conferenceLosses += 1
+                if homeTeamDivisionId == awayTeamDivisionId {
+                    homeTeam.divisionalWins += 1; awayTeam.divisionalLosses += 1
+                }
+            }
+        } else {
+            awayTeam.wins += 1; homeTeam.losses += 1
+             if homeTeamConferenceId == awayTeamConferenceId {
+                awayTeam.conferenceWins += 1; homeTeam.conferenceLosses += 1
+                if homeTeamDivisionId == awayTeamDivisionId {
+                    awayTeam.divisionalWins += 1; homeTeam.divisionalLosses += 1
+                }
+            }
+        }
+        league.teams[homeTeamIndex] = homeTeam
+        league.teams[awayTeamIndex] = awayTeam
+        }
+
+        func simulateGamesForWeek(_ weekNum: Int) {
+        guard weekNum <= league.gamesPerSeason else {
+        print("Cannot sim week (weekNum)."); return
+        }
+        print("Simulating Week (weekNum)...")
+        var gamesActuallySimulatedThisWeek = 0
+        for i in league.schedule.indices {
+        if league.schedule[i].week == weekNum && !league.schedule[i].isPlayed {
+        guard let homeTeam = team(byId: league.schedule[i].homeTeamID),
+        let awayTeam = team(byId: league.schedule[i].awayTeamID) else {
+        print("Error finding teams for game in week (weekNum)"); continue
+        }
+        let simResult = SimulationEngine.simulateGame(homeTeam: homeTeam, awayTeam: awayTeam)
+
+                var gameToUpdate = league.schedule[i]
+                gameToUpdate.homeScore = simResult.homeScore
+                gameToUpdate.awayScore = simResult.awayScore
+                league.schedule[i] = gameToUpdate
+                
+                updateTeamStats(homeTeamID: homeTeam.id, awayTeamID: awayTeam.id, homeScore: simResult.homeScore, awayScore: simResult.awayScore, isTie: simResult.isTie)
+                gamesActuallySimulatedThisWeek += 1
+            }
+        }
+
+        let allGamesInSimmedWeekPlayed = league.schedule.filter { $0.week == weekNum }.allSatisfy { $0.isPlayed }
+
+        if league.currentWeek == weekNum && (gamesActuallySimulatedThisWeek > 0 || allGamesInSimmedWeekPlayed) {
+            if weekNum < league.gamesPerSeason {
+                league.currentWeek = weekNum + 1
+            } else if weekNum == league.gamesPerSeason && allGamesPlayed() {
+                league.currentWeek = league.playoffStartWeek
+                print("Regular season finished. Current week: \(league.currentWeek)")
+            }
+        } else if league.currentWeek == weekNum && gamesActuallySimulatedThisWeek == 0 && allGamesInSimmedWeekPlayed {
+             if weekNum < league.gamesPerSeason { league.currentWeek = weekNum + 1 }
+             else if weekNum == league.gamesPerSeason { league.currentWeek = league.playoffStartWeek }
+        }
+        print("Finished Week \(weekNum). League current week: \(league.currentWeek)")
+        }
+
+        func simulateCurrentWeek() {
+        if let weekToSim = nextUnplayedWeek(), weekToSim <= league.gamesPerSeason {
+        if league.currentWeek != weekToSim { league.currentWeek = weekToSim }
+        simulateGamesForWeek(league.currentWeek)
+        } else {
+        print("No more games to sim or season over. Current week: (league.currentWeek)")
+        if allGamesPlayed() && league.currentWeek <= league.gamesPerSeason {
+        league.currentWeek = league.playoffStartWeek
+        print("All games played. Set to playoff week: (league.currentWeek)")
+        }
+        }
+        }
+
+        func simulateToWeek(_ targetWeekInclusive: Int) {
+        print("Simulating up to week (targetWeekInclusive)...")
+        var currentProcessingWeek = nextUnplayedWeek() ?? league.currentWeek
+
+        while currentProcessingWeek <= targetWeekInclusive && currentProcessingWeek <= league.gamesPerSeason {
+            if league.currentWeek != currentProcessingWeek {
+                league.currentWeek = currentProcessingWeek
+            }
+            
+            let gamesToSimInThisProcessingWeek = league.schedule.filter { $0.week == currentProcessingWeek && !$0.isPlayed }
+            
+            if gamesToSimInThisProcessingWeek.isEmpty {
+                print("No unplayed games in week \(currentProcessingWeek).")
+                if currentProcessingWeek < league.gamesPerSeason {
+                    currentProcessingWeek += 1
+                    if currentProcessingWeek <= league.gamesPerSeason {
+                        league.currentWeek = currentProcessingWeek
+                    }
+                    continue // Added continue to advance the while loop properly
+                } else {
+                    if allGamesPlayed() { league.currentWeek = league.playoffStartWeek }
+                    break
+                }
+            } // This brace was missing, potentially causing the "Expected '}' at end of brace statement" later
+            
+            simulateGamesForWeek(currentProcessingWeek)
+            
+            if allGamesPlayed() {
+                 print("All regular season games simulated after processing week \(currentProcessingWeek).")
+                 league.currentWeek = league.playoffStartWeek
+                 break
+            }
+            
+            if league.currentWeek > currentProcessingWeek {
+                currentProcessingWeek = league.currentWeek
+            } else {
+                currentProcessingWeek += 1
+                if currentProcessingWeek <= league.gamesPerSeason {
+                    league.currentWeek = currentProcessingWeek
+                } else if allGamesPlayed() {
+                    league.currentWeek = league.playoffStartWeek
+                    break;
+                }
+            }
+        }
+
+        if allGamesPlayed() && league.currentWeek <= league.gamesPerSeason {
+            league.currentWeek = league.playoffStartWeek
+        } else if !allGamesPlayed() && league.currentWeek > league.gamesPerSeason {
+            league.currentWeek = nextUnplayedWeek() ?? league.playoffStartWeek
+        }
+        print("Finished simulating to target \(targetWeekInclusive). League current week: \(league.currentWeek)")
+        }
+
+        func resetSchedule() {
+        print("Resetting schedule and team stats...")
+        for i in league.schedule.indices {
+        var gameToReset = league.schedule[i]
+        gameToReset.homeScore = nil
+        gameToReset.awayScore = nil
+        league.schedule[i] = gameToReset
+        }
+        for i in league.teams.indices {
+        league.teams[i].resetSeasonStats()
+        }
+        league.currentWeek = 1
+        }
+
+
+        }
+

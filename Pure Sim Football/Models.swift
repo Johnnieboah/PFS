@@ -168,7 +168,7 @@ extension Color { /* ... (no changes) ... */
         self.init(red:R,green:G,blue:B)
     }
     func toHex() -> String? {
-        let c=UIColor(self); var R,G,B,A:CGFloat(0); guard c.getRed(&R,green:&G,blue:&B,alpha:&A) else{return nil}
+        let c=UIColor(self); var R,G,B,A = CGFloat(0); guard c.getRed(&R,green:&G,blue:&B,alpha:&A) else{return nil}
         return String(format:"#%02X%02X%02X",Int(R*255),Int(G*255),Int(B*255))
     }
 }
