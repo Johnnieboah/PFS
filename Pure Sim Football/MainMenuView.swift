@@ -1,28 +1,26 @@
-//
-//  MainMenuView.swift
-//  Pure Sim Football
-//
-//  Created by Jay Estep on 5/23/25.
-//
+// MainMenuView.swift
 
 import SwiftUI
+import UIKit // For UIImage
 
 // Helper struct for navigation destination data
 struct DynastyHubDestination: Hashable, Identifiable {
-    let id: UUID
-    let league: League
+    let id: UUID // Use league's ID for identity
+    let league: League // Pass the whole league
 
     init(league: League) {
         self.id = league.id
         self.league = league
     }
 
+    // Hashable conformance
     func hash(into hasher: inout Hasher) {
-        hasher.combine(league.id)
+        hasher.combine(id) // Hash based on league ID
     }
 
+    // Equatable conformance
     static func == (lhs: DynastyHubDestination, rhs: DynastyHubDestination) -> Bool {
-        lhs.league.id == rhs.league.id
+        lhs.id == rhs.id
     }
 }
 
@@ -79,6 +77,7 @@ struct LoadGameSheetView: View {
                                     } label: {
                                         Image(systemName: "arrow.down.circle.fill")
                                             .foregroundColor(.green)
+                                            .imageScale(.large)
                                     }
                                     .buttonStyle(.borderless)
                                     
@@ -87,8 +86,10 @@ struct LoadGameSheetView: View {
                                     } label: {
                                         Image(systemName: "trash.fill")
                                             .foregroundColor(.red)
+                                            .imageScale(.large)
                                     }
                                     .buttonStyle(.borderless)
+                                    .padding(.leading, 5)
                                 }
                             }
                         }
@@ -122,9 +123,11 @@ struct MainMenuView: View {
     @State private var showNewLeagueSheet = false
     @State private var showLoadGameSheet = false
     @State private var navigationPath = NavigationPath()
+    
     @State private var activeLeague: League? = nil
     @State private var activeLeagueLogo: UIImage? = nil
     @State private var activeSlotId: Int? = nil
+    
     @State private var saveSlots: [SaveSlot] = []
     @State private var errorMessage: String? = nil
 
@@ -132,30 +135,48 @@ struct MainMenuView: View {
         NavigationStack(path: $navigationPath) {
             VStack(spacing: 24) {
                 Text("Pure Sim Football")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding(.top)
+                    .font(.system(size: 36, weight: .bold, design: .rounded))
+                    .padding(.top, 40)
 
-                Button("New League") {
+                Button {
+                    print("MainMenuView: 'New League' button tapped. Resetting activeLeague and showing sheet.")
                     self.activeLeague = nil
                     self.activeLeagueLogo = nil
                     self.activeSlotId = nil
                     self.showNewLeagueSheet = true
+                } label: {
+                    Label("New League", systemImage: "plus.circle.fill")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.accentColor)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
-                .buttonStyle(.borderedProminent)
                 .padding(.horizontal)
 
-                Button("Load Saved League") {
+                Button {
                     loadSaveSlotMetadata()
                     self.showLoadGameSheet = true
+                } label: {
+                    Label("Load Saved League", systemImage: "arrow.down.doc.fill")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.gray.opacity(0.2))
+                        .foregroundColor(Color.accentColor)
+                        .cornerRadius(10)
                 }
-                .buttonStyle(.bordered)
                 .padding(.horizontal)
 
                 Spacer()
+                Text("Version 1.0.1") // Updated version example
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .padding(.bottom)
             }
             .navigationTitle("Main Menu")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true)
             .onAppear {
                 loadSaveSlotMetadata()
             }
@@ -163,16 +184,21 @@ struct MainMenuView: View {
                 DynastyHubView(league: hubDestinationData.league, leagueLogo: self.activeLeagueLogo, loadedFromSlotId: self.activeSlotId)
             }
             .sheet(isPresented: $showNewLeagueSheet) {
-                NewLeagueView(
+                NewLeagueView( // NewLeagueView will manage its own state internally
                     onLeagueCreatedAndReadyToNavigate: { newlyCreatedLeague, newlyCreatedLogo, savedToSlotId in
+                        print("MainMenuView: onLeagueCreatedAndReadyToNavigate called.")
+                        print("MainMenuView: League Name: \(newlyCreatedLeague.name), UserTeamID: \(newlyCreatedLeague.userTeamId?.uuidString ?? "nil")")
+                        
                         self.activeLeague = newlyCreatedLeague
                         self.activeLeagueLogo = newlyCreatedLogo
                         self.activeSlotId = savedToSlotId
+                        
                         self.showNewLeagueSheet = false
                         
                         let destination = DynastyHubDestination(league: newlyCreatedLeague)
                         DispatchQueue.main.async {
                             self.navigationPath.append(destination)
+                            print("MainMenuView: DynastyHubDestination appended to navigationPath.")
                         }
                     }
                 )
@@ -203,14 +229,16 @@ struct MainMenuView: View {
     func loadSaveSlotMetadata() {
         LocalFileHelper.loadAndInitializeSaveSlots { loadedSlotsData in
             self.saveSlots = loadedSlotsData
+            print("MainMenuView: Save slots loaded. Count: \(loadedSlotsData.count)")
         }
     }
 
     func loadLeagueFromSlot(_ slot: SaveSlot) {
         guard !slot.isEmpty else {
-            self.errorMessage = "This slot (ID: \(slot.id + 1)) is empty."
+            self.errorMessage = "This slot (ID: \(slot.id + 1)) is empty and cannot be loaded."
             return
         }
+        print("MainMenuView: Loading league from Slot \(slot.id + 1)")
         
         LocalFileHelper.loadCodable(League.self, from: slot.leagueFileName) { leagueOptional in
             if let league = leagueOptional {
@@ -220,29 +248,36 @@ struct MainMenuView: View {
                 LocalFileHelper.loadImage(fileName: slot.logoFileName) { imageOptional in
                     self.activeLeagueLogo = imageOptional
                     self.showLoadGameSheet = false
+                    
                     let destination = DynastyHubDestination(league: league)
                     DispatchQueue.main.async {
                         self.navigationPath.append(destination)
+                        print("MainMenuView: League '\(league.name)' loaded. Navigating to DynastyHub.")
                     }
                 }
             } else {
-                self.errorMessage = "Failed to load league from Slot \(slot.id + 1)."
+                self.errorMessage = "Failed to load league data from Slot \(slot.id + 1). The file might be corrupted or missing."
+                print("MainMenuView: Error loading league from file \(slot.leagueFileName)")
             }
         }
     }
 
     func deleteLeagueInSlot(_ slot: SaveSlot) {
+        print("MainMenuView: Deleting league in Slot \(slot.id + 1)")
         LocalFileHelper.deleteFilesInSlot(slotId: slot.id) { success in
             if success {
                 LocalFileHelper.updateSaveSlot(id: slot.id, leagueName: nil, lastModified: nil) { metadataUpdated in
                     if metadataUpdated {
                         self.loadSaveSlotMetadata()
+                        print("MainMenuView: Slot \(slot.id + 1) deleted and metadata updated.")
                     } else {
-                        self.errorMessage = "Could not update slot metadata after deletion (Slot ID: \(slot.id + 1))."
+                        self.errorMessage = "Could not update slot metadata after deletion (Slot ID: \(slot.id + 1)). Files may be deleted, but slot info remains."
+                        print("MainMenuView: Error updating metadata for slot \(slot.id + 1) after deletion.")
                     }
                 }
             } else {
-                self.errorMessage = "Failed to delete files for Slot \(slot.id + 1)."
+                self.errorMessage = "Failed to delete league files for Slot \(slot.id + 1)."
+                print("MainMenuView: Error deleting files for slot \(slot.id + 1).")
             }
         }
     }
