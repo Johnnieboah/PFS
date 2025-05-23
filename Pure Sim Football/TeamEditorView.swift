@@ -81,4 +81,3 @@ struct TeamEditorView: View {
         self.init(red: r, green: g, blue: b)
     }
     */
-//test comment

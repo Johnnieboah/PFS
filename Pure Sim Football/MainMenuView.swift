@@ -254,4 +254,3 @@ struct MainMenuView: View {
         }
     }
 }
-//test comment

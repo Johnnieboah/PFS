@@ -15,4 +15,3 @@ struct Pure_Sim_FootballTests {
     }
 
 }
-//test comment

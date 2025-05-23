@@ -44,4 +44,3 @@ struct LeagueImagePicker: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
-//test comment
