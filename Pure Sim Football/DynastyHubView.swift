@@ -1,145 +1,82 @@
 import SwiftUI
-import UIKit
 
-struct LeagueSettingsView: View {
-    // Bindings from NewLeagueView
-    @Binding var useDefaultTeams: Bool
-    @Binding var leagueName: String // This is the "source of truth" from NewLeagueView
-    @Binding var leagueLogo: UIImage?
-    
-    @Binding var numberOfConferences: Int
-    @Binding var numberOfDivisions: Int
-    @Binding var teamsPerDivision: Int
-    @Binding var gamesPerSeason: Int
+struct DynastyHubView: View {
+    @State var league: League
+    let leagueLogo: UIImage?
+    let loadedFromSlotId: Int?
 
-    @Binding var maxPlayoffTeamsPerConference: Int
-    @Binding var wildcardRoundByes: Int
-    @Binding var divisionWinnersTopSeeds: Bool
-    @Binding var bracketReseedAfterRoundOne: Bool
-
-    var onDone: () -> Void
-
-    // Local state for the TextField
-    @State private var localLeagueName: String = ""
-    
-    @State private var showingImagePicker = false
-    let wildcardByesOptions = [0, 1, 2, 4]
-    @FocusState private var isLeagueNameFieldFocused: Bool
+    var userTeamDisplay: String? {
+        if !league.isCommissionerMode, let userTeamId = league.userTeamId {
+            if let team = league.teams.first(where: { $0.id == userTeamId }) {
+                return "\(team.location) \(team.name)"
+            }
+        }
+        return nil
+    }
 
     var body: some View {
-        VStack {
-            Form {
-                Section(header: Text("League Identity")) {
-                    TextField("League Name", text: $localLeagueName) // Bind to localLeagueName
-                        .focused($isLeagueNameFieldFocused)
-                        .onSubmit {
-                            // When Return key is pressed, dismiss keyboard.
-                            // The text in localLeagueName will be preserved.
-                            isLeagueNameFieldFocused = false
-                        }
-                        .onChange(of: isLeagueNameFieldFocused) { focused in
-                            if !focused {
-                                // When TextField loses focus (e.g., user taps outside, or Return key was pressed)
-                                // update the actual binding.
-                                print("League Name TextField lost focus. Updating binding with: '\(localLeagueName)'")
-                                leagueName = localLeagueName
-                            }
-                        }
-                    
+        NavigationView {
+            List {
+                Section {
                     HStack {
-                        Text("League Logo")
-                        Spacer()
-                        if let logo = leagueLogo {
-                            Image(uiImage: logo)
-                                .resizable().scaledToFit().frame(width: 40, height: 40)
-                                .clipShape(RoundedRectangle(cornerRadius: 5))
-                        } else {
-                            Image(systemName: "photo.on.rectangle.angled")
-                                .resizable().scaledToFit().frame(width: 40, height: 40).foregroundColor(.gray)
+                        if let image = leagueLogo {
+                            Image(uiImage: image).resizable().scaledToFit().frame(width:60,height:60).clipShape(RoundedRectangle(cornerRadius:8))
                         }
-                        Button(leagueLogo == nil ? "Add Logo" : "Change Logo") { showingImagePicker = true }
-                        .buttonStyle(.borderless)
-                    }
-                }
-
-                Section(header: Text("Team Source")) {
-                    Toggle("Use Default NFL-Style Teams", isOn: $useDefaultTeams)
-                }
-
-                Section(header: Text("League Structure")) {
-                    Stepper(value: $numberOfConferences, in: 1...4) { Text("Conferences: \(numberOfConferences)") }
-                    Stepper(value: $numberOfDivisions, in: 1...8) { Text("Divisions per Conference: \(numberOfDivisions)") }
-                    Stepper(value: $teamsPerDivision, in: 2...8) { Text("Teams per Division: \(teamsPerDivision)") }
-                    Stepper(value: $gamesPerSeason, in: 1...25) { Text("Games per Regular Season: \(gamesPerSeason)") }
-                    Text("Total Teams: \(totalTeamsInLeague)").font(.caption).foregroundColor(.gray)
-                }
-
-                Section(header: Text("Playoff Settings")) {
-                    Stepper(value: $maxPlayoffTeamsPerConference, in: 2...maxPossiblePlayoffTeamsPerConference) {
-                        Text("Playoff Teams per Conf: \(maxPlayoffTeamsPerConference)")
-                    }
-                    VStack(alignment: .leading) {
-                        Text("Wildcard Round Byes per Conf:").font(.subheadline)
-                        Picker("Wildcard Round Byes", selection: $wildcardRoundByes) {
-                            ForEach(validWildcardByesOptions, id: \.self) { value in
-                                Text("\(value) Bye\(value == 1 ? "" : "s")").tag(value)
+                        VStack(alignment: .leading) {
+                            if league.isCommissionerMode {
+                                Text("Commissioner Mode").font(.subheadline).foregroundColor(.orange).bold()
+                            } else if let teamDisplay = userTeamDisplay {
+                                Text("Kontrolling: \(teamDisplay)").font(.subheadline).foregroundColor(.blue).bold()
+                            } else if !league.isCommissionerMode && league.userTeamId == nil {
+                                Text("User Team Not Selected").font(.subheadline).foregroundColor(.red).bold()
+                            }
+                            Text("Teams: \(league.teams.count)").font(.caption).foregroundColor(.secondary)
+                            // Display current season year
+                            Text("Season: \(league.currentSeasonYear)") // This should display like "Season: 2025"
+                                .font(.caption).foregroundColor(.secondary)
+                            if let slotId = loadedFromSlotId {
+                                Text("Slot: \(slotId + 1)").font(.caption).foregroundColor(.gray)
                             }
                         }
-                        .pickerStyle(SegmentedPickerStyle())
-                        .onChange(of: maxPlayoffTeamsPerConference) { newValue in // Corrected onChange
-                            validateAndUpdateWildcardByes()
-                        }
-                        Text("Note: Max byes cannot exceed (Playoff Teams / 2) - 1, and must leave at least 2 teams playing.")
-                            .font(.caption2).foregroundColor(.gray)
                     }
-                    .padding(.vertical, 5)
-                    Toggle("Division Winners are Top Seeds", isOn: $divisionWinnersTopSeeds)
-                    Toggle("Reseed Bracket After Wildcard", isOn: $bracketReseedAfterRoundOne)
+                }
+                Section(header: Text("League Navigation")) {
+                    NavigationLink(destination: ScheduleView(league: $league)) { Label("Schedule", systemImage: "calendar") }
+                    NavigationLink(destination: StandingsView(league: <#League#>)) { Label("Standings", systemImage: "list.number") }
+                    NavigationLink(destination: LeagueTeamsListView(league: $league)) { Label("Rosters", systemImage: "person.3.fill") }
+                    NavigationLink(destination: LeagueStatsView()) { Label("Stats & Leaders", systemImage: "chart.bar.fill") }
+                    NavigationLink(destination: SettingsView()) { Label("League Options", systemImage: "gearshape.fill") }
+                }
+                Section {
+                    Button("Save Progress (Slot \(loadedFromSlotId != nil ? String(loadedFromSlotId!+1) : "N/A"))") { saveCurrentLeagueProgress() }.disabled(loadedFromSlotId == nil)
                 }
             }
-            
-            Button(action: {
-                // Ensure localLeagueName is committed to the binding before calling onDone
-                if isLeagueNameFieldFocused {
-                    isLeagueNameFieldFocused = false // This will trigger the .onChange above
-                }
-                // If not focused, explicitly update binding from local state
-                leagueName = localLeagueName
-                print("Continue button tapped. Final leagueName binding set to: '\(leagueName)'")
-                onDone()
-            }) {
-                Text("Continue")
-                    .font(.headline).frame(maxWidth: .infinity).padding()
-                    .background(Color.accentColor).foregroundColor(.white).cornerRadius(10)
-            }
-            .padding()
-        }
-        .onAppear {
-            // When the view appears, initialize localLeagueName from the binding
-            localLeagueName = leagueName
-            print("LeagueSettingsView appeared. Initial localLeagueName set to: '\(localLeagueName)' from binding.")
-            validateAndUpdateWildcardByes()
-        }
-        .sheet(isPresented: $showingImagePicker) {
-            LeagueImagePicker(image: $leagueLogo)
+            .navigationTitle(league.name.isEmpty ? "Dynasty Hub" : league.name)
+            .navigationBarTitleDisplayMode(.large)
         }
     }
-    
-    var totalTeamsInLeague: Int { numberOfConferences * numberOfDivisions * teamsPerDivision }
-    var maxTeamsPerConference: Int { (numberOfDivisions * teamsPerDivision) }
-    var maxPossiblePlayoffTeamsPerConference: Int { max(2, maxTeamsPerConference) }
-    var validWildcardByesOptions: [Int] {
-        wildcardByesOptions.filter { byeOption in
-            let teamsPlayingIfByes = maxPlayoffTeamsPerConference - (byeOption * 2)
-            return byeOption * 2 < maxPlayoffTeamsPerConference && teamsPlayingIfByes >= 2 && byeOption <= 4
-        }
-    }
-    private func validateAndUpdateWildcardByes() {
-        // If current selection is invalid due to other changes, reset it
-        if !validWildcardByesOptions.contains(wildcardRoundByes) {
-             // Prefer to keep it if possible, otherwise reset to smallest valid or 0
-            wildcardRoundByes = validWildcardByesOptions.first ?? 0
+
+    func saveCurrentLeagueProgress() {
+        guard let slotId = loadedFromSlotId else { print("DynastyHubView Error: No slot ID."); return }
+        print("DynastyHubView: Saving league '\(league.name)' to slot \(slotId + 1)")
+        let leagueFileToSave = SaveSlot(id: slotId).leagueFileName
+        let logoFileToSave = SaveSlot(id: slotId).logoFileName
+        
+        LocalFileHelper.saveCodable(league, to: leagueFileToSave) { success in
+            if success {
+                print("DynastyHubView: League data saved.")
+                if let logo = self.leagueLogo {
+                    LocalFileHelper.saveImage(logo,fileName:logoFileToSave) { _ in
+                        LocalFileHelper.updateSaveSlot(id:slotId,leagueName:self.league.name,lastModified:Date()) { _ in print("DynastyHubView: Meta updated.")}
+                    }
+                } else { LocalFileHelper.updateSaveSlot(id:slotId,leagueName:self.league.name,lastModified:Date()) { _ in print("DynastyHubView: Meta updated (no logo).")}}
+            } else { print("DynastyHubView: Failed to save league data.") }
         }
     }
 }
-//Test
+
+// Placeholder Views (ensure these are correctly defined or you have actual views)
+struct StandingsView: View { var body: some View { Text("Standings Page").navigationTitle("Standings") } }
+struct LeagueStatsView: View { var body: some View { Text("League Stats Page").navigationTitle("Stats & Leaders") } }
+struct SettingsView: View { var body: some View { Text("League Options Page").navigationTitle("League Options") } }
+// Ensure ScheduleView.swift and LeagueTeamsListView.swift are correctly implemented.

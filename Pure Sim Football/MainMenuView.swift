@@ -7,33 +7,28 @@
 
 import SwiftUI
 
-// Define helper structs ONCE.
-// If DynastyHubDestination or LoadGameSheetView are needed by other files,
-// consider moving them to their own file or Models.swift.
-// For now, defined here for MainMenuView's use.
-// ENSURE THESE ARE NOT REDEFINED IN NewLeagueView.swift or elsewhere.
-
+// Helper struct for navigation destination data
 struct DynastyHubDestination: Hashable, Identifiable {
-    let id: UUID // For Identifiable conformance of the destination value itself
-    let league: League // Now holds the actual League object
+    let id: UUID
+    let league: League
 
-    // Initializer
     init(league: League) {
-        self.id = league.id // Use league's ID for the destination's ID for consistency
+        self.id = league.id
         self.league = league
     }
 
     func hash(into hasher: inout Hasher) {
-        hasher.combine(league.id) // Hash based on the league's unique ID
+        hasher.combine(league.id)
     }
 
     static func == (lhs: DynastyHubDestination, rhs: DynastyHubDestination) -> Bool {
-        lhs.league.id == rhs.league.id // Equality based on league's unique ID
+        lhs.league.id == rhs.league.id
     }
 }
 
-struct LoadGameSheetView: View { // Ensure this is defined ONLY HERE or in its own file
-    @Binding var slots: [SaveSlot] // Ensure SaveSlot is defined (in Models.swift)
+// Helper struct for the Load Game sheet
+struct LoadGameSheetView: View {
+    @Binding var slots: [SaveSlot]
     @Binding var showSheet: Bool
     var onSlotSelectedForLoad: (SaveSlot) -> Void
     var onSlotSelectedForDelete: (SaveSlot) -> Void
@@ -122,15 +117,15 @@ struct LoadGameSheetView: View { // Ensure this is defined ONLY HERE or in its o
     }
 }
 
-// MainMenuView struct definition - ENSURE THIS IS THE ONLY DEFINITION of MainMenuView
+// Main View struct
 struct MainMenuView: View {
     @State private var showNewLeagueSheet = false
     @State private var showLoadGameSheet = false
     @State private var navigationPath = NavigationPath()
-    @State private var activeLeague: League? = nil // Ensure League is defined (Models.swift)
+    @State private var activeLeague: League? = nil
     @State private var activeLeagueLogo: UIImage? = nil
     @State private var activeSlotId: Int? = nil
-    @State private var saveSlots: [SaveSlot] = [] // Ensure SaveSlot is defined (Models.swift)
+    @State private var saveSlots: [SaveSlot] = []
     @State private var errorMessage: String? = nil
 
     var body: some View {
@@ -165,11 +160,9 @@ struct MainMenuView: View {
                 loadSaveSlotMetadata()
             }
             .navigationDestination(for: DynastyHubDestination.self) { hubDestinationData in
-                // Ensure DynastyHubView is defined and accessible (in DynastyHubView.swift)
                 DynastyHubView(league: hubDestinationData.league, leagueLogo: self.activeLeagueLogo, loadedFromSlotId: self.activeSlotId)
             }
             .sheet(isPresented: $showNewLeagueSheet) {
-                // This line requires NewLeagueView to be correctly defined (in NewLeagueView.swift) and accessible
                 NewLeagueView(
                     onLeagueCreatedAndReadyToNavigate: { newlyCreatedLeague, newlyCreatedLogo, savedToSlotId in
                         self.activeLeague = newlyCreatedLeague
@@ -185,7 +178,7 @@ struct MainMenuView: View {
                 )
             }
             .sheet(isPresented: $showLoadGameSheet) {
-                LoadGameSheetView( // This uses the LoadGameSheetView defined above in this file
+                LoadGameSheetView(
                     slots: $saveSlots,
                     showSheet: $showLoadGameSheet,
                     onSlotSelectedForLoad: { selectedSlot in
@@ -208,7 +201,7 @@ struct MainMenuView: View {
     }
 
     func loadSaveSlotMetadata() {
-        LocalFileHelper.loadAndInitializeSaveSlots { loadedSlotsData in // Ensure LocalFileHelper is accessible
+        LocalFileHelper.loadAndInitializeSaveSlots { loadedSlotsData in
             self.saveSlots = loadedSlotsData
         }
     }
@@ -254,4 +247,3 @@ struct MainMenuView: View {
         }
     }
 }
-//Test
