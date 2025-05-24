@@ -10,61 +10,66 @@ struct TeamEditorView: View {
     var onTeamSelectedAsUserTeam: ((UUID) -> Void)?
     var isBeingUsedForInitialSelection: Bool = false
 
-    // Initialize selectedColor from team.colorHex
     init(team: Binding<Team>, onTeamSelectedAsUserTeam: ((UUID) -> Void)? = nil, isBeingUsedForInitialSelection: Bool = false) {
         self._team = team
-        // Ensure selectedColor is initialized AFTER team is available
         self._selectedColor = State(initialValue: Color(hex: team.wrappedValue.colorHex) ?? .gray)
         self.onTeamSelectedAsUserTeam = onTeamSelectedAsUserTeam
         self.isBeingUsedForInitialSelection = isBeingUsedForInitialSelection
+        
+        // print("TeamEditorView init: Team '(\(team.wrappedValue.name))', isInitialSelection: \(isBeingUsedForInitialSelection)")
     }
 
     var body: some View {
-        // This view is presented as a sheet and has its own "Done" button,
-        // so NavigationView is appropriate for the title bar.
         NavigationView {
             Form {
                 Section(header: Text("Team Info")) {
                     TextField("Location", text: $team.location)
                     TextField("Name", text: $team.name)
                     ColorPicker("Team Color", selection: $selectedColor)
-                        .onChange(of: selectedColor) { newValue in
-                            team.colorHex = newValue.toHex() ?? team.colorHex
+                        .onChange(of: selectedColor) { newColor in
+                            team.colorHex = newColor.toHex() ?? team.colorHex
                         }
                 }
 
-                Section(header: Text("Roster")) { // Added header for clarity
-                    NavigationLink("Edit Roster (\(team.players.count) players)") { // Corrected Text
-                        RosterView(team: $team) // Ensure RosterView is correctly defined
+                Section(header: Text("Roster")) {
+                    NavigationLink("Edit Roster (\(team.players.count) players)") {
+                        RosterView(team: $team)
                     }
                 }
 
-                if isBeingUsedForInitialSelection && onTeamSelectedAsUserTeam != nil {
-                    Section {
-                        Button("Select this Team & Confirm") {
-                            onTeamSelectedAsUserTeam!(team.id)
-                            dismiss() // Dismiss TeamEditorView after selection
+                // "Select this Team" button is only shown if for initial selection
+                if isBeingUsedForInitialSelection {
+                    Section(header: Text("Confirm Your Choice")) {
+                        Button {
+                            print("TeamEditorView: 'Select this Team & Confirm' button tapped for team \(team.name) (ID: \(team.id))")
+                            if let callback = onTeamSelectedAsUserTeam {
+                                callback(team.id) // This sets the userTeamId in NewLeagueView
+                            } else {
+                                print("TeamEditorView: ERROR - onTeamSelectedAsUserTeam callback is nil.")
+                            }
+                            // Dismissal is handled by NewLeagueView when selectedTeamForEditing becomes nil
+                        } label: {
+                            Label("Select this Team & Confirm", systemImage: "checkmark.circle.fill")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity, alignment: .center)
                         }
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .foregroundColor(.blue) // Make it look like a primary action
+                        .buttonStyle(.borderedProminent) // Make it stand out
+                        .tint(.blue) // Ensure it's clearly actionable
                     }
                 }
             }
-            .navigationTitle("Edit \(team.location) \(team.name)") // Corrected
+            .navigationTitle(isBeingUsedForInitialSelection ? "Select: \(team.name)" : "Edit \(team.name)")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(isBeingUsedForInitialSelection ? "Done Editing" : "Done") { // Adjust button text
-                        // Color is already updated via onChange
-                        dismiss()
+                    // If for initial selection, this button is effectively "Cancel" or "Done with edits but not selecting"
+                    // If not for initial selection, it's just "Done"
+                    Button(isBeingUsedForInitialSelection ? "Cancel Selection" : "Done Editing") {
+                        print("TeamEditorView: Toolbar button tapped ('\(isBeingUsedForInitialSelection ? "Cancel Selection" : "Done Editing")').")
+                        // If it's "Cancel Selection", we explicitly do *not* call the onTeamSelectedAsUserTeam callback.
+                        dismiss() // Just dismiss the sheet
                     }
                 }
-                // If not for initial selection, perhaps a Cancel button could be useful
-                // if (onTeamSelectedAsUserTeam == nil) { // Example condition
-                //     ToolbarItem(placement: .cancellationAction) {
-                //         Button("Cancel") { dismiss() }
-                //     }
-                // }
             }
         }
     }

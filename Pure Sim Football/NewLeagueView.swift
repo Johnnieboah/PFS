@@ -4,14 +4,12 @@ import SwiftUI
 import UIKit
 
 struct NewLeagueView: View {
-    // This league instance is fresh each time NewLeagueView is presented as a sheet.
     @State private var league: League = League(id: UUID(), name: "", teams: [], isCommissionerMode: false, userTeamId: nil, schedule: [], gamesPerSeason: 17, currentSeasonYear: 2025, numberOfConferences: 2, divisionsPerConference: 4)
     
     @State private var leagueLogo: UIImage? = nil
     @State private var selectedTeamForEditing: Team? = nil
     @State private var showingSettingsSheet = false
     
-    // Temporary state vars for LeagueSettingsView sub-sheet
     @State private var tempLeagueName: String = ""
     @State private var tempIsCommissionerMode: Bool = false
     @State private var tempUseDefaultTeams: Bool = true
@@ -37,11 +35,10 @@ struct NewLeagueView: View {
 
     private func presentSettingsSheet() {
         print("NewLeagueView: presentSettingsSheet called. Initializing temp vars for settings sub-sheet.")
-        tempLeagueName = league.name.isEmpty ? "My Sim League" : league.name // Use current @State league's name or default
-        tempIsCommissionerMode = league.isCommissionerMode      // Use current @State league's commish mode
-        tempUseDefaultTeams = true                              // Always default to true for a new settings configuration
+        tempLeagueName = league.name.isEmpty ? "My Sim League" : league.name
+        tempIsCommissionerMode = league.isCommissionerMode
+        tempUseDefaultTeams = true
         
-        // Reset structure to defaults for the settings sheet, user can change these
         tempNumberOfConferences = 2
         tempNumberOfDivisions = 4
         tempTeamsPerDivision = 4
@@ -58,14 +55,12 @@ struct NewLeagueView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Uncomment for very detailed body re-evaluation logging:
-                // let _ = print("NewLeagueView BODY re-eval. League: '\(league.name)', Teams: \(league.teams.count), Commish: \(league.isCommissionerMode), UserTeam: \(league.userTeamId?.uuidString ?? "nil"), CompletedSettings: \(hasCompletedInitialSettings)")
-
+                 // let _ = print("NewLeagueView BODY re-eval. League Name: '\(league.name)', Teams: \(league.teams.count), Commish: \(league.isCommissionerMode), UserTeam: \(league.userTeamId?.uuidString ?? "nil"), CompletedSettings: \(hasCompletedInitialSettings), League ID: \(league.id)")
                 if !hasCompletedInitialSettings {
                     initialSettingsPromptView
-                } else if !league.isCommissionerMode && league.userTeamId == nil && !league.teams.isEmpty {
+                } else if !league.isCommissionerMode && league.userTeamId == nil && !league.teams.isEmpty { // This is teamSelectionView
                     teamSelectionView
-                } else {
+                } else {  // This is reviewAndSaveView (Commissioner mode, or Player mode with team selected)
                     reviewAndSaveView
                 }
             }
@@ -94,22 +89,21 @@ struct NewLeagueView: View {
                 )
             }
             .sheet(item: $selectedTeamForEditing) { teamToEdit in
-                 TeamEditorView(
+                 TeamEditorView( // This is the sheet that needs the fix for team selection
                     team: binding(for: teamToEdit),
                     onTeamSelectedAsUserTeam: { selectedTeamID in
-                        self.league.userTeamId = selectedTeamID // Directly update the @State var
-                        print("NewLeagueView: User team ID set in @State league to: \(selectedTeamID)")
-                        self.selectedTeamForEditing = nil
+                        self.league.userTeamId = selectedTeamID
+                        print("NewLeagueView: User team ID set in @State league to: \(selectedTeamID) for league ID \(self.league.id)")
+                        self.selectedTeamForEditing = nil // This dismisses TeamEditorView
                     },
                     isBeingUsedForInitialSelection: !self.league.isCommissionerMode && self.league.userTeamId == nil
                  )
             }
             .onAppear {
-                // This runs ONCE when NewLeagueView instance is created and appears.
                 print("NewLeagueView: .onAppear. League ID: \(league.id) (Should be new ID if re-presented). Teams: \(league.teams.count). hasCompletedInitialSettings: \(hasCompletedInitialSettings)")
                 LocalFileHelper.loadAndInitializeSaveSlots { loadedSlots in self.saveSlots = loadedSlots }
                 
-                if !hasCompletedInitialSettings { // Only show settings sheet automatically if initial setup isn't done
+                if !hasCompletedInitialSettings {
                     presentSettingsSheet()
                 }
             }
@@ -156,14 +150,17 @@ struct NewLeagueView: View {
 
             List { teamsSection(teams: league.teams) }
             
-            Button { saveLeagueToDefaultSlotAndProceed() } label: {
+            Button {
+                print("NewLeagueView: 'Confirm Team & Start League' (teamSelectionView) button tapped.")
+                saveLeagueToDefaultSlotAndProceed()
+            } label: {
                 Label("Confirm Team & Start League", systemImage: "arrow.right.circle.fill")
                     .font(.headline)
                     .padding()
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
-            .disabled(league.userTeamId == nil)
+            .disabled(league.userTeamId == nil) // This should now become enabled after correct team selection
             .padding()
         }
     }
@@ -178,31 +175,33 @@ struct NewLeagueView: View {
                 Text("Your Team: \(team.location) \(team.name)").font(.title2.bold()).foregroundColor(.blue).padding(.top)
                 Text("Review the league structure and your team. Save to begin your career!")
                     .font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding([.horizontal, .bottom])
-            } else if !league.teams.isEmpty { // Should be Player Mode, team not yet selected
+            } else if !league.teams.isEmpty {
                  Text("Review Generated Teams").font(.title2.bold()).padding(.top)
-                 Text("Next, select your team if you haven't already, then save to start.")
+                 Text("Please select your team from the list, then save to start.")
                     .font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding([.horizontal, .bottom])
-            } else { // Teams are empty, direct here if initial settings didn't complete or something else went wrong
+            } else {
                  Text("Team Generation Needed").font(.title2.bold()).padding(.top)
-                 Text("Please configure league settings to generate teams.")
+                 Text("Please (re)configure league settings to generate teams.")
                     .font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding([.horizontal, .bottom])
-                 Button("Re-Configure Settings") { presentSettingsSheet() } // Allow re-configuration
+                 Button("Re-Configure Settings") { presentSettingsSheet() }
                     .buttonStyle(.bordered)
                     .padding()
             }
             
-            // Always show the list of teams if they exist (or an empty state within teamsSection)
             List { teamsSection(teams: league.teams) }
             
             if !league.teams.isEmpty {
-                Button { saveLeagueToDefaultSlotAndProceed() } label: {
-                    Label(league.isCommissionerMode || league.userTeamId != nil ? "Save & Start League" : "Select Team then Start", systemImage: "play.circle.fill")
+                Button {
+                    print("NewLeagueView: 'Save/Start League' (reviewAndSaveView) button tapped.")
+                    saveLeagueToDefaultSlotAndProceed()
+                } label: {
+                    Label(league.isCommissionerMode || league.userTeamId != nil ? "Save & Start League" : "Select Your Team First", systemImage: "play.circle.fill")
                         .font(.headline)
                         .padding()
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(!league.isCommissionerMode && league.userTeamId == nil && !league.teams.isEmpty) // More precise disable
+                .disabled(!league.isCommissionerMode && league.userTeamId == nil && !league.teams.isEmpty)
                 .padding()
             }
         }
@@ -212,7 +211,7 @@ struct NewLeagueView: View {
         print("NewLeagueView: handleSettingsDone called from LeagueSettingsView.")
         
         var configuredLeague = League(
-            id: self.league.id,
+            id: UUID(),
             name: self.tempLeagueName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "My Sim League" : self.tempLeagueName.trimmingCharacters(in: .whitespacesAndNewlines),
             teams: [],
             isCommissionerMode: self.tempIsCommissionerMode,
@@ -226,7 +225,7 @@ struct NewLeagueView: View {
         
         let teamsPerDivToUse = self.tempUseDefaultTeams ? 4 : self.tempTeamsPerDivision
 
-        print("NewLeagueView: Generating teams for 'configuredLeague' with: useDefault=\(tempUseDefaultTeams), name='\(configuredLeague.name)', commish=\(configuredLeague.isCommissionerMode), teams/div=\(teamsPerDivToUse)")
+        print("NewLeagueView: Generating teams for 'configuredLeague' (NEW ID: \(configuredLeague.id)) with: useDefault=\(tempUseDefaultTeams), name='\(configuredLeague.name)', commish=\(configuredLeague.isCommissionerMode), teams/div=\(teamsPerDivToUse)")
 
         if self.tempUseDefaultTeams {
             configuredLeague.teams = generateDefaultNFLTeams(
@@ -241,25 +240,22 @@ struct NewLeagueView: View {
                 teamsPerDivision: teamsPerDivToUse
             )
         }
-        print("NewLeagueView: For 'configuredLeague', generated \(configuredLeague.teams.count) teams. League ID was \(configuredLeague.id)")
+        print("NewLeagueView: For 'configuredLeague' (ID: \(configuredLeague.id)), generated \(configuredLeague.teams.count) teams.")
 
         if configuredLeague.teams.isEmpty {
-            let errorMsg = self.tempUseDefaultTeams ? "Failed to generate default NFL teams. Check static data in NewLeagueView." : "Failed to generate custom teams. Check structure settings (e.g., ensure teams per division is at least 2)."
+            let errorMsg = self.tempUseDefaultTeams ? "Failed to generate default NFL teams. Check static data in NewLeagueView." : "Failed to generate custom teams. Check structure settings."
             print("NewLeagueView: ERROR - \(errorMsg)")
             statusMessage = errorMsg
             showingStatusAlert = true
-            // Do NOT set hasCompletedInitialSettings to true if teams failed
             return
         }
 
-        // This is the critical assignment
         self.league = configuredLeague
         
-        // Immediately verify the @State variable 'self.league'
         print("NewLeagueView: @State self.league ASSIGNED. Name: '\(self.league.name)', Teams: \(self.league.teams.count), Commish: \(self.league.isCommissionerMode), ID: \(self.league.id)")
         
-        self.hasCompletedInitialSettings = true // Mark settings as done
-        self.showingSettingsSheet = false      // Dismiss the settings sub-sheet
+        self.hasCompletedInitialSettings = true
+        self.showingSettingsSheet = false
     }
 
     func teamsSection(teams: [Team]) -> some View {
@@ -273,12 +269,14 @@ struct NewLeagueView: View {
                         Spacer()
                         if !league.isCommissionerMode && league.userTeamId == team.id {
                             Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
+                                .accessibilityLabel("Selected Team: \(team.name)")
                         }
                         Button {
+                            print("NewLeagueView: Edit button tapped for team: \(team.name) (ID: \(team.id)) from league \(self.league.id)")
                             self.selectedTeamForEditing = team
-                            print("NewLeagueView: Edit button tapped for team: \(team.name)")
                         } label: { Image(systemName: "pencil.circle").imageScale(.large) }
                         .buttonStyle(.borderless)
+                        .accessibilityLabel("Edit team \(team.name)")
                     }
                 }
             }
@@ -287,61 +285,51 @@ struct NewLeagueView: View {
 
     func binding(for team: Team) -> Binding<Team> {
         guard let index = league.teams.firstIndex(where: { $0.id == team.id }) else {
-            // This should ideally not happen if 'team' comes from 'league.teams'
-            print("NewLeagueView: FATAL ERROR - Team with ID \(team.id) not found in league.teams for binding.")
-            // Fallback or crash, but indicates a logic error elsewhere.
-            // For safety, though it's not ideal, returning a constant binding might prevent a crash during debugging,
-            // but the root cause needs to be found.
-            // return .constant(team) // Avoids crash but edits won't save.
+            print("NewLeagueView: FATAL ERROR - Team with ID \(team.id) ('\(team.name)') not found in @State league.teams for binding. Current @State league ID: \(self.league.id). Team count: \(self.league.teams.count)")
             fatalError("Team not found for binding. Inconsistent state.")
         }
         return $league.teams[index]
     }
     
     func saveLeagueToDefaultSlotAndProceed() {
-        // Log the state of 'self.league' right at the beginning of this function
-        print("NewLeagueView: saveLeagueToDefaultSlotAndProceed called. Current @State league - Name: '\(league.name)', Teams: \(league.teams.count), Commish: \(league.isCommissionerMode), UserTeamID: \(league.userTeamId?.uuidString ?? "nil")")
+        print("NewLeagueView: saveLeagueToDefaultSlotAndProceed called. Current @State league - Name: '\(league.name)', Teams: \(league.teams.count), Commish: \(league.isCommissionerMode), UserTeamID: \(league.userTeamId?.uuidString ?? "nil"), League ID: \(league.id)")
         
         if league.teams.isEmpty {
             statusMessage = "Cannot save: No teams have been generated for the league."
             showingStatusAlert = true
-            print("NewLeagueView: Save failed - no teams in self.league.")
+            print("NewLeagueView: Save PREVENTED - no teams in self.league.")
             return
         }
         
+        print("NewLeagueView: Checking Player Mode conditions: isCommissionerMode=\(league.isCommissionerMode), userTeamId=\(league.userTeamId?.uuidString ?? "nil")")
         if !league.isCommissionerMode && league.userTeamId == nil {
-            statusMessage = "Please select your team before starting the league. Tap a team's edit (✏️) icon, then 'Select this Team'."
+            statusMessage = "Please select your team before starting the league. Tap a team's edit (✏️) icon, then 'Select this Team' from the editor."
             showingStatusAlert = true
-            print("NewLeagueView: Save failed - Player mode but no userTeamId in self.league.")
+            print("NewLeagueView: Save PREVENTED - Player mode but no userTeamId in self.league.")
             return
         }
         
-        // Create a mutable copy of the league state to save
-        // This 'leagueToSave' will be the one actually written to disk and passed on.
+        print("NewLeagueView: Save conditions met. Proceeding with save.")
         var leagueToSave = self.league
         if leagueToSave.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            leagueToSave.name = "My Sim League" // Default name if empty
+            leagueToSave.name = "My Sim League"
         }
 
-        // Generate schedule if it's empty
         if leagueToSave.schedule.isEmpty {
-            print("NewLeagueView: Generating schedule for league '\(leagueToSave.name)' before final save...")
-            // Determine if default teams were used based on the current league state
-            // This relies on numberOfConferences/divisionsPerConference being set correctly
-            // for default teams (2 conf, 4 div/conf)
-            let wasUsingDefaultTeams = (leagueToSave.numberOfConferences == 2 && leagueToSave.divisionsPerConference == 4 && leagueToSave.teams.count == 32) || self.tempUseDefaultTeams // tempUseDefaultTeams remembers the last setting choice
-            
-            print("NewLeagueView: Schedule generation using wasUsingDefaultTeams: \(wasUsingDefaultTeams) (derived from league structure or last temp setting)")
+            print("NewLeagueView: Generating schedule for league '\(leagueToSave.name)' (ID: \(leagueToSave.id)) before final save...")
+            let isLikelyDefaultStructure = leagueToSave.numberOfConferences == 2 && leagueToSave.divisionsPerConference == 4 && leagueToSave.teams.count == 32
+            let intentWasDefault = self.tempUseDefaultTeams
+            let useDefaultTeamsForSchedule = isLikelyDefaultStructure || intentWasDefault
+
+            print("NewLeagueView: Schedule generation using useDefaultTeamsForSchedule: \(useDefaultTeamsForSchedule) (isLikelyDefault: \(isLikelyDefaultStructure), intentWasDefault: \(intentWasDefault))")
 
             leagueToSave.schedule = SimulationEngine.generateSchedule(
                 for: leagueToSave.teams,
                 gamesToPlayPerTeamTarget: leagueToSave.gamesPerSeason,
-                isFirstSeason: true, // Always true for a new league from this view
-                isUsingDefaultTeams: wasUsingDefaultTeams,
+                isFirstSeason: true,
+                isUsingDefaultTeams: useDefaultTeamsForSchedule,
                 leagueStructure: (conferences: leagueToSave.numberOfConferences, divisionsPerConference: leagueToSave.divisionsPerConference)
             )
-            // Also update the @State league's schedule if you want the UI to reflect it immediately
-            // though it's about to navigate away.
             self.league.schedule = leagueToSave.schedule
             print("NewLeagueView: Schedule generated with \(leagueToSave.schedule.count) games.")
             if leagueToSave.schedule.isEmpty && !leagueToSave.teams.isEmpty {
@@ -393,9 +381,8 @@ struct NewLeagueView: View {
         LocalFileHelper.updateSaveSlot(id: slotId, leagueName: leagueToSave.name, lastModified: Date()) { metaSuccess in
             if metaSuccess {
                 print("NewLeagueView: Meta updated for slot ID \(slotId). Calling onLeagueCreatedAndReadyToNavigate.")
-                print("NewLeagueView: League being passed to DynastyHub: Name: '\(leagueToSave.name)', UserTeamID: \(leagueToSave.userTeamId?.uuidString ?? "nil"), Team Count: \(leagueToSave.teams.count), Schedule Count: \(leagueToSave.schedule.count)")
+                print("NewLeagueView: League being passed to DynastyHub: Name: '\(leagueToSave.name)', UserTeamID: \(leagueToSave.userTeamId?.uuidString ?? "nil"), Team Count: \(leagueToSave.teams.count), Schedule Count: \(leagueToSave.schedule.count), League ID: \(leagueToSave.id)")
                 self.onLeagueCreatedAndReadyToNavigate?(leagueToSave, self.leagueLogo, slotId)
-                // Dismissal is handled by MainMenuView after navigation path is updated if this is a sheet
             } else {
                 statusMessage = "League data saved to slot \(slotId + 1), but failed to update save slot metadata."
                 showingStatusAlert = true
@@ -430,9 +417,6 @@ struct NewLeagueView: View {
         
         guard rawTeamData.count >= expectedTotalTeams else {
             print("NewLeagueView: CRITICAL ERROR in generateDefaultNFLTeams - Not enough raw team data (\(rawTeamData.count)) for expected \(expectedTotalTeams) teams.")
-            // This status message is set, and the function returns empty, handled in handleSettingsDone
-            // statusMessage = "Error: Default team data is incomplete. Cannot generate default league."
-            // showingStatusAlert = true
             return []
         }
         
@@ -447,7 +431,7 @@ struct NewLeagueView: View {
                         teamCounter += 1
                     } else { break }
                 }
-                if teamCounter >= expectedTotalTeams { break } // Exit if enough teams are generated
+                if teamCounter >= expectedTotalTeams { break }
             }
             if teamCounter >= expectedTotalTeams { break }
         }
@@ -461,9 +445,7 @@ struct NewLeagueView: View {
         print("NewLeagueView: Generating \(numberOfConferences * divisionsPerConference * teamsPerDivision) placeholder teams.")
         guard numberOfConferences > 0, divisionsPerConference > 0, teamsPerDivision >= 2 else {
             print("NewLeagueView: Invalid custom league structure. Confs: \(numberOfConferences), Divs/Conf: \(divisionsPerConference), Teams/Div: \(teamsPerDivision)")
-            // statusMessage = "Invalid custom league structure. Ensure at least 1 conference, 1 division per conference, and 2 teams per division."
-            // showingStatusAlert = true
-            return [] // Return empty, handled in handleSettingsDone
+            return []
         }
         for confIdx in 0..<numberOfConferences {
             for divIdx in 0..<divisionsPerConference {
@@ -512,7 +494,7 @@ struct NewLeagueView: View {
                                       potential: potential))
             }
         }
-        while players.count < count { // Fill remaining spots if positions don't sum to count
+        while players.count < count {
             let genericPos = ["WR", "CB", "LB", "OL", "DL"].randomElement()!
             let potential = Int.random(in: 50...85)
             players.append(Player(id:UUID(),name:"\(firstNames.randomElement()!) \(lastNames.randomElement()!)",position:genericPos,overall:Int.random(in:40...potential),age:Int.random(in:22...28),potential:potential))
