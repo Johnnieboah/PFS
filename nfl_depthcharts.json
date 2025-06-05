@@ -1,0 +1,3559 @@
+{
+  "Arizona_Cardinals": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "17",
+      "JONES, ZAY CC/Jax",
+      "80",
+      "Fehoko, Simi U/LAC",
+      "83",
+      "Palmer, Tejhaun 24/6"
+    ],
+    "RWR": [
+      "18",
+      "Harrison Jr., Marvin 24/1",
+      "89",
+      "Weaver, Xavier",
+      "86",
+      "Jackson, Trishton",
+      "30",
+      "Green, Bryson"
+    ],
+    "SWR": [
+      "14",
+      "Wilson, Michael 23/3",
+      "4",
+      "Dortch, Greg",
+      "82",
+      "Baccellia, Andre",
+      "16",
+      "Watkins, Quez"
+    ],
+    "LT": [
+      "70",
+      "Johnson Jr., Paris 23/1",
+      "68",
+      "BEACHUM, KELVIN U/NYJ",
+      "66",
+      "Curtis, McClendon",
+      "69",
+      "Senn, Valentin CF25*"
+    ],
+    "LG": [
+      "63",
+      "Brown, Evan U/Sea",
+      "64",
+      "Curhan, Jake U/Chi",
+      "58",
+      "Conner, Hayden 25/6"
+    ],
+    "C": [
+      "72",
+      "Froholdt, Hjalte U/Cle",
+      "59",
+      "Gaines II, Jon 23/4",
+      "61",
+      "Haynesworth, Sincere"
+    ],
+    "RG": [
+      "74",
+      "Adams, Isaiah 24/3",
+      "71",
+      "Newman, Royce U/TB",
+      "60",
+      "Leverett, Nick"
+    ],
+    "RT": [
+      "73",
+      "Williams, Jonah U/Cin",
+      "75",
+      "Jones, Christian 24/5",
+      "78",
+      "Fryar, Josh",
+      "67",
+      "Byers, Jeremiah"
+    ],
+    "TE": [
+      "45",
+      "Cardenas, Oscar"
+    ],
+    "QB": [
+      "1",
+      "Murray, Kyler 19/1",
+      "7",
+      "BRISSETT, JACOBY U/NE",
+      "15",
+      "Tune, Clayton 23/5"
+    ],
+    "RB": [
+      "35",
+      "Knight, Bam"
+    ]
+  },
+  "Atlanta_Falcons": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "1",
+      "Mooney, Darnell U/Atl",
+      "82",
+      "Washington, Casey 24/6",
+      "19",
+      "Blair, Chris",
+      "87",
+      "Sills, David",
+      "36",
+      "Skinner Jr., Quincy"
+    ],
+    "RWR": [
+      "5",
+      "London, Drake 22/1",
+      "4",
+      "HODGE, KHADAREL U/Det",
+      "81",
+      "Drummond, Dylan",
+      "83",
+      "Polk, Makai"
+    ],
+    "SWR": [
+      "34",
+      "McCloud III, Ray-Ray U/SF",
+      "14",
+      "AGNEW, JAMAL",
+      "80",
+      "Nash, Nick",
+      "86",
+      "Matthews, Jesse"
+    ],
+    "LT": [
+      "70",
+      "MATTHEWS, JAKE 14/1",
+      "69",
+      "Nelson, Jack 25/7",
+      "74",
+      "Wheatley Jr., Tyrone",
+      "72",
+      "Zierer, Kilian"
+    ],
+    "LG": [
+      "65",
+      "Bergeron, Matthew 23/2",
+      "71",
+      "WILKINSON, ELIJAH",
+      "67",
+      "Gray, Joshua"
+    ],
+    "C": [
+      "64",
+      "Neuzil, Ryan",
+      "52",
+      "Gwyn, Jovaughn 23/7",
+      "73",
+      "Cindric, Matthew",
+      "61",
+      "Gonzalez, Michael"
+    ],
+    "RG": [
+      "63",
+      "Lindstrom, Chris 19/1",
+      "68",
+      "Hinton, Kyle"
+    ],
+    "RT": [
+      "76",
+      "MCGARY, KALEB 19/1",
+      "77",
+      "NORTON, STORM P/NO",
+      "75",
+      "Parker, Brandon",
+      "62",
+      "Williams, Jordan"
+    ],
+    "TE": [
+      "47",
+      "Simon, Joshua"
+    ],
+    "QB": [
+      "9",
+      "Penix Jr., Michael 24/1",
+      "18",
+      "COUSINS, KIRK U/Min",
+      "12",
+      "Stick, Easton U/LAC",
+      "11",
+      "Jones, Emory"
+    ],
+    "RB": [
+      "38",
+      "Carter, Nathan"
+    ]
+  },
+  "Baltimore_Ravens": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "10",
+      "HOPKINS, DEANDRE U/KC",
+      "81",
+      "Walker, Devontez 24/4",
+      "12",
+      "Cunningham, Malik P/NE",
+      "87",
+      "Guillory, Xavier"
+    ],
+    "RWR": [
+      "7",
+      "Bateman, Rashod 21/1",
+      "16",
+      "Wallace, Tylan 21/4",
+      "18",
+      "KIRKWOOD, KEITH U/NO",
+      "86",
+      "Banks, Jahmal"
+    ],
+    "SWR": [
+      "4",
+      "Flowers, Zay 23/1",
+      "83",
+      "Wester, LaJohntay 25/6",
+      "6",
+      "MILLER, ANTHONY",
+      "82",
+      "Wade, Dayton"
+    ],
+    "LT": [
+      "79",
+      "STANLEY, RONNIE 16/1",
+      "68",
+      "Noteboom, Joseph U/LAR",
+      "71",
+      "Vinson, Carson 25/5",
+      "65",
+      "Hutchinson, Ozzie"
+    ],
+    "LG": [
+      "72",
+      "Vorhees, Andrew 23/7",
+      "74",
+      "Dellinger, Garrett 25/7",
+      "63",
+      "Penning, Jared"
+    ],
+    "C": [
+      "64",
+      "Linderbaum, Tyler 22/1",
+      "61",
+      "Samac, Nick 24/7",
+      "76",
+      "Dalcourt, Darrian"
+    ],
+    "RG": [
+      "77",
+      "Faalele, Daniel 22/4",
+      "66",
+      "Cleveland, Ben 21/3",
+      "67",
+      "Bullock, Corey"
+    ],
+    "RT": [
+      "70",
+      "Rosengarten, Roger 24/2",
+      "51",
+      "Jones Jr., Emery 25/3",
+      "78",
+      "Lichtenhan, Gerad",
+      "56",
+      "Holskey, Reid"
+    ],
+    "TE": [
+      "89",
+      "Andrews, Mark 18/3",
+      "80",
+      "Likely, Isaiah 22/4",
+      "88",
+      "Kolar, Charlie 22/4",
+      "84",
+      "Mitchell-Paden, Zaire",
+      "85",
+      "Pitz, Sam"
+    ],
+    "QB": [
+      "8",
+      "Jackson, Lamar 18/1",
+      "15",
+      "RUSH, COOPER U/Dal",
+      "13",
+      "Leary, Devin 24/6"
+    ],
+    "RB": [
+      "38",
+      "Ntoh, Sone"
+    ],
+    "FB": [
+      "42",
+      "RICARD, PATRICK",
+      "47",
+      "Scott, Lucas"
+    ]
+  },
+  "Buffalo_Bills": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "0",
+      "Coleman, Keon 24/2",
+      "81",
+      "Prather, Kaden 25/7",
+      "13",
+      "Virgil, Jalen",
+      "82",
+      "Wilkerson, Kristian"
+    ],
+    "RWR": [
+      "5",
+      "Palmer, Joshua U/LAC",
+      "18",
+      "Moore, Elijah U/Cle",
+      "19",
+      "Hamler, KJ",
+      "80",
+      "Shavers, Tyrell",
+      "89",
+      "Gosnell, Stephen"
+    ],
+    "SWR": [
+      "10",
+      "Shakir, Khalil 22/5",
+      "1",
+      "Samuel, Curtis U/Was",
+      "15",
+      "Shenault Jr., Laviska",
+      "87",
+      "Akharaiyi, Kelly"
+    ],
+    "LT": [
+      "73",
+      "DAWKINS, DION 17/2",
+      "68",
+      "Grable, Tylan 24/6",
+      "75",
+      "Gouraige, Richard",
+      "67",
+      "Clayton, Travis 24/7*"
+    ],
+    "LG": [
+      "76",
+      "Edwards, David U/LAR",
+      "70",
+      "Anderson, Alec",
+      "63",
+      "Reimer, Rush"
+    ],
+    "C": [
+      "66",
+      "McGovern, Connor U/Dal",
+      "62",
+      "Van Pran-Granger, Sedrick 24/5",
+      "61",
+      "Bayer, Jacob"
+    ],
+    "RG": [
+      "64",
+      "Torrence, O'Cyrus 23/2",
+      "53",
+      "Green, Kendrick U/Hou",
+      "65",
+      "Edwards, Mike"
+    ],
+    "RT": [
+      "79",
+      "Brown, Spencer 21/3",
+      "74",
+      "Van Demark, Ryan",
+      "77",
+      "Lundt, Chase 25/6"
+    ],
+    "TE": [
+      "88",
+      "Knox, Dawson 19/3",
+      "86",
+      "Kincaid, Dalton 23/1",
+      "85",
+      "Hawes, Jackson 25/5",
+      "84",
+      "Davidson, Zach",
+      "83",
+      "Latu, Keleki"
+    ],
+    "QB": [
+      "17",
+      "Allen, Josh 18/1",
+      "11",
+      "TRUBISKY, MITCHELL CC/Pit",
+      "6",
+      "Buechele, Shane",
+      "14",
+      "WHITE, MIKE"
+    ],
+    "RB": [
+      "4",
+      "Cook, James 22/2",
+      "26",
+      "Johnson, Ty",
+      "22",
+      "Davis, Ray 24/4",
+      "21",
+      "Evans, Darrynton U/Chi",
+      "20",
+      "Gore Jr., Frank"
+    ],
+    "FB": [
+      "41",
+      "Gilliam, Reggie"
+    ]
+  },
+  "Carolina_Panthers": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "4",
+      "McMillan, Tetairoa 25/1",
+      "83",
+      "MOORE, DAVID U/TB",
+      "88",
+      "Chisena, Dan",
+      "86",
+      "Hudson, Kobe"
+    ],
+    "RWR": [
+      "17",
+      "Legette, Xavier 24/1",
+      "18",
+      "Coker, Jalen",
+      "87",
+      "Tremayne, Brycen",
+      "80",
+      "George, Jacolby"
+    ],
+    "SWR": [
+      "19",
+      "THIELEN, ADAM CC/Min",
+      "15",
+      "Horn Jr., Jimmy 25/6",
+      "13",
+      "Renfrow, Hunter",
+      "81",
+      "Luther, T.J."
+    ],
+    "LT": [
+      "79",
+      "Ekwonu, Ikem 22/1",
+      "70",
+      "Christensen, Brady 21/3",
+      "73",
+      "Walton, Brandon"
+    ],
+    "LG": [
+      "68",
+      "Lewis, Damien U/Sea",
+      "61",
+      "Kingston, Jarrett W/SF",
+      "65",
+      "Carter, Ja'Tyre"
+    ],
+    "C": [
+      "63",
+      "Corbett, Austin U/LAR",
+      "64",
+      "Mays, Cade 22/6",
+      "66",
+      "Losoya, Steven"
+    ],
+    "RG": [
+      "50",
+      "Hunt, Robert U/Mia",
+      "62",
+      "Zavala, Chandler 23/4",
+      "67",
+      "Kandra, Luke"
+    ],
+    "RT": [
+      "72",
+      "MOTON, TAYLOR 17/2",
+      "77",
+      "Nijman, Yosh U/GB",
+      "71",
+      "Tarquin, Michael"
+    ],
+    "TE": [
+      "45",
+      "Pierre, Bryce"
+    ],
+    "QB": [
+      "9",
+      "Young, Bryce 23/1",
+      "14",
+      "DALTON, ANDY U/NO",
+      "16",
+      "Plummer, Jack",
+      "10",
+      "Garbers, Ethan"
+    ],
+    "RB": [
+      "34",
+      "Lynch-Adams, Kayron"
+    ]
+  },
+  "Chicago_Bears": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "2",
+      "Moore, DJ T/Car",
+      "12",
+      "Duvernay, Devin CC/Jax",
+      "84",
+      "Boykin, Miles",
+      "82",
+      "Jackson, John"
+    ],
+    "RWR": [
+      "15",
+      "Odunze, Rome 24/1",
+      "10",
+      "Scott, Tyler 23/4",
+      "83",
+      "Toure, Samori",
+      "20",
+      "Walker, Jahdae"
+    ],
+    "SWR": [
+      "87",
+      "Burden III, Luther 25/2",
+      "14",
+      "Zaccheaus, Olamide U/Was",
+      "13",
+      "Alexander, Maurice",
+      "26",
+      "Richardson, JP"
+    ],
+    "LT": [
+      "70",
+      "Jones, Braxton 22/5",
+      "75",
+      "Trapilo, Ozzy 25/2",
+      "78",
+      "Miles, Joshua"
+    ],
+    "LG": [
+      "62",
+      "THUNEY, JOE T/KC",
+      "65",
+      "Newman, Luke 25/6",
+      "60",
+      "Murray, Bill"
+    ],
+    "C": [
+      "52",
+      "Dalman, Drew U/Atl",
+      "68",
+      "Kramer Jr., Doug 22/6",
+      "63",
+      "Glaser, Chris",
+      "67",
+      "Stromberg, Ricky"
+    ],
+    "RG": [
+      "73",
+      "Jackson, Jonah T/LAR",
+      "71",
+      "Bates, Ryan T/Buf",
+      "74",
+      "McFadden, Jordan W/LAC"
+    ],
+    "RT": [
+      "58",
+      "Wright, Darnell 23/1",
+      "72",
+      "Amegadjie, Kiran 24/3",
+      "79",
+      "Benedet, Theo"
+    ],
+    "TE": [
+      "84",
+      "Loveland, Colston 25/1",
+      "85",
+      "Kmet, Cole 20/2",
+      "81",
+      "Smythe, Durham CC/Mia",
+      "88",
+      "Carlson, Stephen",
+      "86",
+      "Wilson, Joel"
+    ],
+    "QB": [
+      "18",
+      "Williams, Caleb 24/1",
+      "17",
+      "Bagent, Tyson",
+      "11",
+      "KEENUM, CASE U/Hou",
+      "16",
+      "Reed, Austin"
+    ],
+    "RB": [
+      "35",
+      "Hankins, Deion"
+    ]
+  },
+  "Cincinnati_Bengals": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "1",
+      "Chase, Ja'Marr 21/1",
+      "19",
+      "Pryor, Kendric",
+      "82",
+      "Tinsley, Mitchell",
+      "12",
+      "Owens, Rashod"
+    ],
+    "RWR": [
+      "5",
+      "Higgins, Tee 20/2",
+      "81",
+      "Burton, Jermaine 24/3",
+      "17",
+      "Burgess, Cole",
+      "14",
+      "Moore, Jordan"
+    ],
+    "SWR": [
+      "80",
+      "Iosivas, Andrei 23/6",
+      "15",
+      "Jones, Charlie 23/4",
+      "18",
+      "Williams, Isaiah W/Det",
+      "16",
+      "Mayes, Jamoi"
+    ],
+    "LT": [
+      "75",
+      "Brown Jr., Orlando U/KC",
+      "74",
+      "Rivers, Jalen 25/5",
+      "79",
+      "Coker, Andrew",
+      "77",
+      "Etienne, Caleb"
+    ],
+    "LG": [
+      "63",
+      "Fairchild, Dylan 25/3",
+      "67",
+      "Volson, Cordell 22/4",
+      "60",
+      "Kirkland, Jaxson"
+    ],
+    "C": [
+      "64",
+      "KARRAS, TED U/NE",
+      "65",
+      "Lee, Matt 24/7",
+      "68",
+      "McLaughlin, Seth"
+    ],
+    "RG": [
+      "62",
+      "PATRICK, LUCAS U/NO",
+      "61",
+      "Ford, Cody U/Arz",
+      "66",
+      "Manning, Tashawn"
+    ],
+    "RT": [
+      "71",
+      "Mims, Amarius 24/1",
+      "76",
+      "Cochran, Devin",
+      "73",
+      "Stueber, Andrew P/Atl"
+    ],
+    "TE": [
+      "85",
+      "Grandy, Cam",
+      "86",
+      "Taylor, Kole"
+    ],
+    "QB": [
+      "9",
+      "Burrow, Joe 20/1",
+      "6",
+      "Browning, Jake",
+      "11",
+      "WOODSIDE, LOGAN 18/7",
+      "10",
+      "Thorne, Payton"
+    ],
+    "RB": [
+      "36",
+      "Milton, Kendall",
+      "40",
+      "Conley, Quali"
+    ]
+  },
+  "Cleveland_Browns": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "19",
+      "Tillman, Cedric 23/3",
+      "16",
+      "Johnson, Diontae U/Bal",
+      "18",
+      "Bell, David 22/3",
+      "31",
+      "McDonald, Cade"
+    ],
+    "RWR": [
+      "3",
+      "Jeudy, Jerry T/Den",
+      "81",
+      "Woods II, Michael 22/6",
+      "89",
+      "Davis, Kaden",
+      "83",
+      "Johnson, Kisean"
+    ],
+    "SWR": [
+      "80",
+      "Thrash, Jamari 24/5",
+      "2",
+      "CARTER, DEANDRE U/Chi",
+      "84",
+      "Larvadain, Gage",
+      "37",
+      "Floriea, Luke",
+      "Gill, Jaelen"
+    ],
+    "LT": [
+      "79",
+      "Jones, Dawand 23/4",
+      "69",
+      "Thompson, Lorenzo",
+      "60",
+      "Pearl, Julian",
+      "61",
+      "Mbaeteka, Roy SF24*"
+    ],
+    "LG": [
+      "75",
+      "BITONIO, JOEL 14/2",
+      "70",
+      "Zinter, Zak 24/3",
+      "67",
+      "Cohen, Javion",
+      "65",
+      "Tinsley, Dartanyan"
+    ],
+    "C": [
+      "55",
+      "Pocic, Ethan U/Sea",
+      "56",
+      "Wypler, Luke 23/6",
+      "62",
+      "Osborne, Justin"
+    ],
+    "RG": [
+      "77",
+      "TELLER, WYATT T/Buf",
+      "74",
+      "Jenkins, Teven U/Chi",
+      "64",
+      "Latham, Brady"
+    ],
+    "RT": [
+      "78",
+      "CONKLIN, JACK U/Ten",
+      "71",
+      "LUCAS, CORNELIUS U/Was",
+      "72",
+      "Ivey, Jason"
+    ],
+    "TE": [
+      "85",
+      "Njoku, David 17/1",
+      "88",
+      "Fannin Jr., Harold 25/3",
+      "86",
+      "Whiteheart, Blake",
+      "82",
+      "Bates, Brenden P/NYJ",
+      "87",
+      "McKitty, Tre'"
+    ],
+    "QB": [
+      "15",
+      "FLACCO, JOE U/Ind",
+      "8",
+      "Pickett, Kenny T/Phi",
+      "5",
+      "Gabriel, Dillon 25/3",
+      "12",
+      "Sanders, Shedeur 25/5",
+      "4",
+      "Watson, Deshaun T/Hou"
+    ],
+    "RB": [
+      "34",
+      "Ford, Jerome 22/5",
+      "10",
+      "Judkins, Quinshon 25/2",
+      "22",
+      "Sampson, Dylan 25/4",
+      "20",
+      "Strong Jr., Pierre T/NE",
+      "39",
+      "Marshall, Ahmani"
+    ],
+    "FB": [
+      "36",
+      "Hairston, Troy"
+    ]
+  },
+  "Dallas_Cowboys": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "13",
+      "Pickens, George T/Pit",
+      "83",
+      "Brooks, Jalen 23/7",
+      "19",
+      "Flournoy, Ryan 24/6",
+      "7",
+      "Holden, Traeshon"
+    ],
+    "RWR": [
+      "1",
+      "Tolbert, Jalen 22/3",
+      "81",
+      "Mingo, Jonathan T/Car",
+      "80",
+      "Campbell, Parris U/Phi",
+      "84",
+      "Harmon, Kelvin"
+    ],
+    "SWR": [
+      "88",
+      "Lamb, CeeDee 20/1",
+      "9",
+      "Turpin, KaVontae",
+      "16",
+      "Cropper, Jalen",
+      "6",
+      "Kelly, Josh"
+    ],
+    "LT": [
+      "60",
+      "Guyton, Tyler 24/1",
+      "76",
+      "Richards, Asim 23/5",
+      "75",
+      "Adeniji, Hakeem U/Cle",
+      "71",
+      "Thomas, Nate 24/7"
+    ],
+    "LG": [
+      "73",
+      "Smith, Tyler 22/1",
+      "65",
+      "Jones, Rob U/Mia",
+      "77",
+      "Charles, Saahdiq"
+    ],
+    "C": [
+      "56",
+      "Beebe, Cooper 24/3",
+      "67",
+      "Hoffman, Brock",
+      "64",
+      "SHEPLEY, DAKODA"
+    ],
+    "RG": [
+      "52",
+      "Booker, Tyler 25/1",
+      "66",
+      "Bass, T.J."
+    ],
+    "RT": [
+      "78",
+      "Steele, Terence",
+      "69",
+      "Cornelius, Ajani 25/6",
+      "79",
+      "Waletzko, Matt 22/5"
+    ],
+    "TE": [
+      "85",
+      "Fant, Princeton",
+      "46",
+      "Neville, Tyler"
+    ],
+    "QB": [
+      "4",
+      "PRESCOTT, DAK 16/4",
+      "10",
+      "Milton III, Joe T/NE",
+      "15",
+      "GRIER, WILL"
+    ],
+    "RB": [
+      "33",
+      "Williams, Javonte U/Den",
+      "34",
+      "Blue, Jaydon 25/5",
+      "27",
+      "Sanders, Miles CC/Car",
+      "37",
+      "Mafah, Phil 25/7",
+      "42",
+      "Vaughn, Deuce 23/6"
+    ],
+    "FB": [
+      "40",
+      "Luepke, Hunter"
+    ]
+  },
+  "Denver_Broncos": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "14",
+      "Sutton, Courtland 18/2",
+      "13",
+      "Bryant, Pat 25/3",
+      "87",
+      "Perry, A.T.",
+      "80",
+      "Davis, Joaquin"
+    ],
+    "RWR": [
+      "19",
+      "Mims Jr., Marvin 23/2",
+      "11",
+      "Franklin, Troy 24/4",
+      "81",
+      "Newton, Jerjuan"
+    ],
+    "SWR": [
+      "17",
+      "Vele, Devaughn 24/7",
+      "5",
+      "Sherfield Sr., Trent U/Min",
+      "83",
+      "Bandy, Michael U/LAC",
+      "89",
+      "Jackson, Courtney",
+      "39",
+      "White, Kyrese"
+    ],
+    "LT": [
+      "72",
+      "BOLLES, GARETT 17/1",
+      "79",
+      "Peart, Matt U/NYG",
+      "73",
+      "Crum, Frank",
+      "70",
+      "Cox, Marques"
+    ],
+    "LG": [
+      "74",
+      "Powers, Ben U/Bal",
+      "76",
+      "Throckmorton, Calvin U/Ten",
+      "64",
+      "Webb, Clay"
+    ],
+    "C": [
+      "60",
+      "Wattenberg, Luke 22/5",
+      "54",
+      "Forsyth, Alex 23/7",
+      "68",
+      "Michalski, Joe"
+    ],
+    "RG": [
+      "77",
+      "Meinerz, Quinn 21/3",
+      "66",
+      "Gargiulo, Nick 24/7",
+      "78",
+      "Sherman, Will"
+    ],
+    "RT": [
+      "69",
+      "MCGLINCHEY, MIKE U/SF",
+      "63",
+      "Palczewski, Alex",
+      "71",
+      "Truss, Xavier"
+    ],
+    "TE": [
+      "Prieskorn, Caden"
+    ],
+    "QB": [
+      "10",
+      "Nix, Bo 24/1",
+      "8",
+      "Stidham, Jarrett U/LV",
+      "4",
+      "Ehlinger, Sam U/Ind"
+    ],
+    "RB": [
+      "37",
+      "Harvey, RJ 25/2",
+      "23",
+      "Estime, Audric 24/5",
+      "38",
+      "McLaughlin, Jaleel",
+      "28",
+      "Badie, Tyler P/Bal",
+      "25",
+      "Watson, Blake"
+    ],
+    "FB": [
+      "20",
+      "BURTON, MICHAEL U/KC"
+    ]
+  },
+  "Detroit_Lions": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "12",
+      "PATRICK, TIM",
+      "18",
+      "TeSlaa, Isaac 25/3",
+      "86",
+      "Taylor, Malik U/NYJ",
+      "83",
+      "Meeks, Jackson"
+    ],
+    "RWR": [
+      "1",
+      "Williams, Jameson 22/1",
+      "11",
+      "RAYMOND, KALIF U/Ten",
+      "10",
+      "Bell, Ronnie",
+      "80",
+      "Keeney-James, Jakobie"
+    ],
+    "SWR": [
+      "14",
+      "St. Brown, Amon-Ra 21/4",
+      "19",
+      "Lovett, Dominic 25/7",
+      "85",
+      "Kennedy, Tom"
+    ],
+    "LT": [
+      "68",
+      "DECKER, TAYLOR 16/1",
+      "59",
+      "Manu, Giovanni 24/4",
+      "72",
+      "Jones, Jamarco"
+    ],
+    "LG": [
+      "73",
+      "Mahogany, Christian 24/6",
+      "71",
+      "Frazier, Miles 25/5",
+      "52",
+      "Muti, Netane"
+    ],
+    "C": [
+      "69",
+      "Ratledge, Tate 25/2",
+      "Colon, Trystan U/Arz",
+      "65",
+      "Eguakun, Kingsley"
+    ],
+    "RG": [
+      "60",
+      "GLASGOW, GRAHAM 16/3",
+      "74",
+      "Awosika, Kayode P/Phi",
+      "62",
+      "Niese, Michael"
+    ],
+    "RT": [
+      "58",
+      "Sewell, Penei 21/1",
+      "70",
+      "SKIPPER, DAN",
+      "75",
+      "Sorsdal, Colby 23/5",
+      "63",
+      "Miller, Mason"
+    ],
+    "TE": [
+      "82",
+      "Deal, Luke"
+    ],
+    "QB": [
+      "16",
+      "GOFF, JARED T/LAR",
+      "2",
+      "Hooker, Hendon 23/3",
+      "8",
+      "Allen, Kyle U/Pit"
+    ],
+    "RB": [
+      "42",
+      "Tyus III, Anthony"
+    ]
+  },
+  "Green_Bay_Packers": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "87",
+      "Doubs, Romeo 22/4",
+      "83",
+      "Williams, Savion 25/3",
+      "18",
+      "Heath, Malik",
+      "17",
+      "Brown Jr., Sam"
+    ],
+    "RWR": [
+      "22",
+      "Golden, Matthew 25/1",
+      "9",
+      "Watson, Christian 22/2",
+      "81",
+      "Hicks, Julian",
+      "84",
+      "Johnson, Cornelius"
+    ],
+    "SWR": [
+      "11",
+      "Reed, Jayden 23/2",
+      "13",
+      "Wicks, Dontayvion 23/5",
+      "6",
+      "Hardman, Mecole U/KC",
+      "80",
+      "Melton, Bo P/Sea"
+    ],
+    "LT": [
+      "63",
+      "Walker, Rasheed 22/7",
+      "71",
+      "Belton, Anthony 25/2",
+      "76",
+      "Telfort, Kadeem"
+    ],
+    "LG": [
+      "65",
+      "Banks, Aaron U/SF",
+      "73",
+      "Williams, John 25/7",
+      "60",
+      "Cooper, Tyler",
+      "61",
+      "Lippe, J.J."
+    ],
+    "C": [
+      "74",
+      "Jenkins, Elgton 19/2",
+      "62",
+      "Monk, Jacob 24/5",
+      "64",
+      "Hill, Trey"
+    ],
+    "RG": [
+      "75",
+      "Rhyan, Sean 22/3",
+      "77",
+      "Morgan, Jordan 24/1",
+      "67",
+      "Jennings, Donovan"
+    ],
+    "RT": [
+      "50",
+      "Tom, Zach 22/4",
+      "79",
+      "Glover, Travis 24/6",
+      "72",
+      "Banks, Brant"
+    ],
+    "TE": [
+      "43",
+      "Lumpkin, Johnny"
+    ],
+    "QB": [
+      "10",
+      "Love, Jordan 20/1",
+      "2",
+      "Willis, Malik T/Ten",
+      "16",
+      "Clifford, Sean 23/5",
+      "19",
+      "Elgersma, Taylor"
+    ],
+    "RB": [
+      "35",
+      "White, Jalen"
+    ]
+  },
+  "Houston_Texans": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "12",
+      "Collins, Nico 21/3",
+      "3",
+      "Dell, Tank 23/3",
+      "19",
+      "Hutchinson, Xavier 23/6",
+      "89",
+      "Johnson, Xavier"
+    ],
+    "RWR": [
+      "81",
+      "Higgins, Jayden 25/2",
+      "8",
+      "Metchie III, John 22/2",
+      "84",
+      "WATSON, JUSTIN U/KC",
+      "14",
+      "Wayne, Jared"
+    ],
+    "SWR": [
+      "13",
+      "Kirk, Christian T/Jax",
+      "82",
+      "Noel, Jaylin 25/3",
+      "17",
+      "Berrios, Braxton U/Mia",
+      "88",
+      "Johnson III, Johnny",
+      "85",
+      "Jackson, Daniel"
+    ],
+    "LT": [
+      "74",
+      "Robinson, Cam U/Min",
+      "79",
+      "Ersery, Aireontae 25/2",
+      "72",
+      "Thomas, Jaylon"
+    ],
+    "LG": [
+      "75",
+      "TOMLINSON, LAKEN U/Sea",
+      "70",
+      "Scruggs, Juice 23/2",
+      "74",
+      "Thomas, Zach W/NE"
+    ],
+    "C": [
+      "54",
+      "Patterson, Jarrett 23/6",
+      "67",
+      "Andrews, Jake W/NE",
+      "65",
+      "Cox, Eli"
+    ],
+    "RG": [
+      "71",
+      "Howard, Tytus 19/1",
+      "69",
+      "Ingram, Ed T/Min",
+      "77",
+      "Henderson, LaDarius 24/7"
+    ],
+    "RT": [
+      "57",
+      "Fisher, Blake 24/2",
+      "77",
+      "BROWN, TRENT U/Cin",
+      "75",
+      "Deculus, Austin 22/6"
+    ],
+    "TE": [
+      "86",
+      "Schultz, Dalton U/Dal",
+      "9",
+      "Jordan, Brevin 21/5",
+      "87",
+      "Stover, Cade 24/4",
+      "42",
+      "Lachey, Luke 25/7",
+      "83",
+      "Smith Jr., Irv"
+    ],
+    "QB": [
+      "7",
+      "Stroud, C.J. 23/1",
+      "10",
+      "Mills, Davis 21/3",
+      "18",
+      "Mertz, Graham 25/6",
+      "16",
+      "Slovis, Kedon"
+    ],
+    "RB": [
+      "22",
+      "Jordan, Jawhar 24/6"
+    ],
+    "FB": [
+      "44",
+      "Brooks, British",
+      "45",
+      "JOHNSON, JAKOB"
+    ]
+  },
+  "Indianapolis_Colts": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "11",
+      "Pittman Jr., Michael 20/2",
+      "10",
+      "Mitchell, Adonai 24/2",
+      "2",
+      "Montgomery, D.J.",
+      "9",
+      "Ajou, Ajou",
+      "43",
+      "Kahmann, Tyler"
+    ],
+    "RWR": [
+      "14",
+      "Pierce, Alec 22/2",
+      "16",
+      "Dulin, Ashton",
+      "13",
+      "Treadwell, Laquon",
+      "8",
+      "Parker, Landon",
+      "4",
+      "Taylor, Blayne"
+    ],
+    "SWR": [
+      "1",
+      "Downs, Josh 23/3",
+      "6",
+      "Gould, Anthony 24/5",
+      "3",
+      "Owen, Coleman"
+    ],
+    "LT": [
+      "79",
+      "Raimann, Bernhard 22/3",
+      "73",
+      "Freeland, Blake 23/4",
+      "67",
+      "Tenuta, Luke",
+      "64",
+      "Foerner, Marshall"
+    ],
+    "LG": [
+      "56",
+      "Nelson, Quenton 18/1",
+      "63",
+      "Pinter, Danny 20/5",
+      "66",
+      "Sills, Josh W/Phi"
+    ],
+    "C": [
+      "60",
+      "Bortolini, Tanor 24/4",
+      "62",
+      "French, Wesley",
+      "65",
+      "Vavao, Mose"
+    ],
+    "RG": [
+      "71",
+      "Goncalves, Matt 24/3",
+      "68",
+      "Tucker, Dalton"
+    ],
+    "RT": [
+      "72",
+      "Smith, Braden 18/2",
+      "75",
+      "Travis, Jalen 25/4",
+      "76",
+      "Wilson, Jack"
+    ],
+    "TE": [
+      "86",
+      "Mallory, Will 23/5",
+      "83",
+      "Okwuegbunam, Albert",
+      "45",
+      "Mang, Maximilian CF25*"
+    ],
+    "QB": [
+      "5",
+      "Richardson Sr., Anthony 23/1",
+      "17",
+      "Jones, Daniel U/Min",
+      "15",
+      "Leonard, Riley 25/6",
+      "8",
+      "Bean, Jason"
+    ],
+    "RB": [
+      "37",
+      "Bentley IV, Ulysses"
+    ]
+  },
+  "Jacksonville_Jaguars": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "7",
+      "Thomas Jr., Brian 24/1",
+      "80",
+      "Cephus, Joshua",
+      "10",
+      "Pancol, Eli",
+      "17",
+      "Camper, Cam",
+      "Irwin, Trenton"
+    ],
+    "RWR": [
+      "5",
+      "Brown, Dyami U/Was",
+      "81",
+      "Trammell, Austin U/LAR",
+      "89",
+      "Rees-Zammit, Louis SF24*",
+      "87",
+      "Jones, J.J.",
+      "88",
+      "Lassiter, Darius"
+    ],
+    "SWR": [
+      "12",
+      "Hunter, Travis 25/1",
+      "11",
+      "Washington, Parker 23/6",
+      "15",
+      "Brayboy, Chandler",
+      "13",
+      "Singer, Dorian"
+    ],
+    "LT": [
+      "72",
+      "Little, Walker 21/2",
+      "74",
+      "Johnson, Fred U/Phi",
+      "78",
+      "Daley, Dennis"
+    ],
+    "LG": [
+      "76",
+      "Cleveland, Ezra T/Min",
+      "55",
+      "Edoga, Chuma U/Dal"
+    ],
+    "C": [
+      "73",
+      "Hainsey, Robert U/TB",
+      "79",
+      "Fortner, Luke 22/3",
+      "60",
+      "Monheim, Jonah 25/7"
+    ],
+    "RG": [
+      "65",
+      "Mekari, Patrick U/Bal",
+      "64",
+      "Milum, Wyatt 25/3",
+      "61",
+      "Wormley, Sal"
+    ],
+    "RT": [
+      "77",
+      "Harrison, Anton 23/1",
+      "62",
+      "Foster, Javon 24/4",
+      "70",
+      "Van Lanen, Cole T/GB"
+    ],
+    "TE": [
+      "49",
+      "Bowman, Shawn",
+      "43",
+      "Copenhaver, John"
+    ],
+    "QB": [
+      "16",
+      "Lawrence, Trevor 21/1",
+      "12",
+      "MULLENS, NICK U/Min",
+      "18",
+      "Wolford, John",
+      "19",
+      "Henigan, Seth"
+    ],
+    "RB": [
+      "1",
+      "Etienne Jr., Travis 21/1",
+      "4",
+      "Bigsby, Tank 23/3",
+      "33",
+      "Tuten, Bhayshul 25/4",
+      "36",
+      "Allen Jr., LeQuint 25/7",
+      "38",
+      "Jackson, Ja'Quinden"
+    ]
+  },
+  "Kansas_City_Chiefs": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "1",
+      "Worthy, Xavier 24/1",
+      "24",
+      "Moore, Skyy 22/2",
+      "8",
+      "Ross, Justyn",
+      "89",
+      "Brownlee, Jason"
+    ],
+    "RWR": [
+      "5",
+      "Brown, Hollywood U/Arz",
+      "11",
+      "Royals, Jalen 25/4",
+      "2",
+      "Thornton, Tyquan",
+      "80",
+      "Badger, Elijhah",
+      "82",
+      "Holiday, Jimmy"
+    ],
+    "SWR": [
+      "4",
+      "Rice, Rashee 23/2",
+      "9",
+      "Smith-Schuster, JuJu",
+      "81",
+      "Remigio, Nikko",
+      "84",
+      "Dalena, Mac"
+    ],
+    "LT": [
+      "71",
+      "Simmons, Josh 25/1",
+      "77",
+      "Moore, Jaylon U/SF",
+      "79",
+      "Pole, Esa"
+    ],
+    "LG": [
+      "76",
+      "Suamataia, Kingsley 24/2",
+      "66",
+      "Caliendo, Mike",
+      "73",
+      "Cooper, Dalton"
+    ],
+    "C": [
+      "52",
+      "Humphrey, Creed 21/2",
+      "60",
+      "Nourzad, Hunter 24/5"
+    ],
+    "RG": [
+      "65",
+      "Smith, Trey 21/6",
+      "61",
+      "Hanson, C.J. 24/7",
+      "70",
+      "Anchrum, Tremayne"
+    ],
+    "RT": [
+      "74",
+      "Taylor, Jawaan U/Jax",
+      "64",
+      "Morris, Wanya 23/3",
+      "75",
+      "Driskell, Ethan",
+      "72",
+      "Godrick, Chukwuebuka SF23*"
+    ],
+    "TE": [
+      "49",
+      "Watson, Tre"
+    ],
+    "QB": [
+      "15",
+      "Mahomes, Patrick 17/1",
+      "17",
+      "Minshew, Gardner CC/LV",
+      "14",
+      "Zappe, Bailey U/Cle",
+      "19",
+      "Oladokun, Chris"
+    ],
+    "RB": [
+      "10",
+      "Pacheco, Isiah 22/7",
+      "29",
+      "Hunt, Kareem 17/3",
+      "25",
+      "Mitchell, Elijah U/SF",
+      "30",
+      "Smith, Brashard 25/7",
+      "34",
+      "Young, Elijah"
+    ],
+    "FB": [
+      "42",
+      "Steele, Carson"
+    ]
+  },
+  "Las_Vegas_Raiders": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "1",
+      "Tucker, Tre 23/3",
+      "10",
+      "Thornton Jr., Dont'e 25/4",
+      "4",
+      "Jackson, Shedrick",
+      "83",
+      "Smith, Key'Shawn"
+    ],
+    "RWR": [
+      "18",
+      "Bech, Jack 25/2",
+      "17",
+      "Johnson, Collin U/Chi",
+      "82",
+      "Franklin, Zakhari",
+      "85",
+      "Jackson Jr., Ketron"
+    ],
+    "SWR": [
+      "16",
+      "Meyers, Jakobi U/NE",
+      "19",
+      "Mellott, Tommy 25/6",
+      "81",
+      "Bachman, Alex",
+      "15",
+      "Philips, Kyle"
+    ],
+    "LT": [
+      "74",
+      "Miller, Kolton 18/1",
+      "60",
+      "Grant, Charles 25/3",
+      "72",
+      "Ayedze, Gottlieb"
+    ],
+    "LG": [
+      "66",
+      "Parham, Dylan 22/3",
+      "61",
+      "Meredith, Jordan"
+    ],
+    "C": [
+      "58",
+      "Powers-Johnson, Jackson 24/2",
+      "67",
+      "Putnam, Will",
+      "64",
+      "Hufford, Jarrod"
+    ],
+    "RG": [
+      "65",
+      "CAPPA, ALEX CC/Cin",
+      "76",
+      "Rogers, Caleb 25/3"
+    ],
+    "RT": [
+      "71",
+      "Glaze, DJ 24/3",
+      "77",
+      "Munford Jr., Thayer 22/7",
+      "78",
+      "Wagner, Dalton",
+      "70",
+      "Clements, Parker"
+    ],
+    "TE": [
+      "84",
+      "Ismail, Qadir",
+      "86",
+      "Conroy, Pat"
+    ],
+    "QB": [
+      "7",
+      "SMITH, GENO T/Sea",
+      "12",
+      "O'Connell, Aidan 23/4",
+      "5",
+      "Miller, Cam 25/6",
+      "14",
+      "Bradley, Carter"
+    ],
+    "RB": [
+      "33",
+      "Collier, Chris"
+    ]
+  },
+  "Los_Angeles_Chargers": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "81",
+      "WILLIAMS, MIKE 17/1",
+      "1",
+      "Johnston, Quentin 23/1",
+      "82",
+      "Rice, Brenden 24/7",
+      "87",
+      "Fitzpatrick, Dez"
+    ],
+    "RWR": [
+      "9",
+      "Harris, Tre 25/2",
+      "84",
+      "Lambert-Smith, KeAndre 25/5",
+      "88",
+      "Reagor, Jalen",
+      "38",
+      "Campbell, Dalevon"
+    ],
+    "SWR": [
+      "15",
+      "McConkey, Ladd 24/2",
+      "12",
+      "Davis, Derius 23/4",
+      "39",
+      "Johnson, Jaylen",
+      "37",
+      "Grimm, Luke"
+    ],
+    "LT": [
+      "70",
+      "Slater, Rashawn 21/1",
+      "68",
+      "Salyer, Jamaree 22/6",
+      "65",
+      "Stewart, Corey"
+    ],
+    "LG": [
+      "77",
+      "Johnson, Zion 22/1",
+      "71",
+      "Taylor, Branson 25/6"
+    ],
+    "C": [
+      "75",
+      "BOZEMAN, BRADLEY CC/Car",
+      "78",
+      "James, Andre CC/LV",
+      "63",
+      "Kaltenberger, Josh"
+    ],
+    "RG": [
+      "73",
+      "Becton, Mekhi U/Phi",
+      "61",
+      "Barnhart, Karsen",
+      "62",
+      "Jones, Nash"
+    ],
+    "RT": [
+      "76",
+      "Alt, Joe 24/1",
+      "79",
+      "Pipkins III, Trey 19/3",
+      "74",
+      "McLellan, Tyler",
+      "67",
+      "Washington, Savion"
+    ],
+    "TE": [
+      "46",
+      "Castles, McCallan",
+      "49",
+      "Petaia, Jordan SF25*"
+    ],
+    "QB": [
+      "10",
+      "Herbert, Justin 20/1",
+      "4",
+      "HEINICKE, TAYLOR T/Atl",
+      "5",
+      "Lance, Trey U/Dal",
+      "13",
+      "Uiagalelei, DJ"
+    ],
+    "RB": [
+      "35",
+      "Sanders, Raheim"
+    ],
+    "FB": [
+      "44",
+      "Matlock, Scott 23/6"
+    ]
+  },
+  "Los_Angeles_Rams": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "17",
+      "ADAMS, DAVANTE CC/NYJ",
+      "88",
+      "Whittington, Jordan 24/6",
+      "82",
+      "Edwards, Tru"
+    ],
+    "RWR": [
+      "12",
+      "Nacua, Puka 23/5",
+      "15",
+      "Mumpfield, Konata 25/7",
+      "2",
+      "Cephus, Quintez",
+      "86",
+      "Williams, Mario"
+    ],
+    "SWR": [
+      "5",
+      "Atwell, Tutu 21/2",
+      "19",
+      "Smith, Xavier",
+      "10",
+      "Covey, Britain U/Phi",
+      "6",
+      "Stoops, Drake",
+      "81",
+      "Presley, Brennan"
+    ],
+    "LT": [
+      "77",
+      "Jackson, Alaric",
+      "68",
+      "QUESSENBERRY, DAVID U/Min",
+      "61",
+      "Arcuri, AJ 22/7"
+    ],
+    "LG": [
+      "73",
+      "Avila, Steve 23/2",
+      "67",
+      "Dedich, Justin",
+      "60",
+      "Bowles, Wyatt"
+    ],
+    "C": [
+      "65",
+      "Shelton, Coleman U/Chi",
+      "50",
+      "Limmer, Beaux 24/6",
+      "63",
+      "McMahon, Dylan P/Phi",
+      "62",
+      "Lampkin, Willie"
+    ],
+    "RG": [
+      "69",
+      "Dotson, Kevin T/Pit",
+      "70",
+      "Leveston, KT 24/7",
+      "66",
+      "Dooley, Ben"
+    ],
+    "RT": [
+      "79",
+      "HAVENSTEIN, ROB 15/2",
+      "71",
+      "McClendon Jr., Warren 23/5",
+      "72",
+      "Wedig, Trey"
+    ],
+    "TE": [
+      "83",
+      "Redman, Mark"
+    ],
+    "QB": [
+      "9",
+      "STAFFORD, MATTHEW T/Det",
+      "11",
+      "GAROPPOLO, JIMMY CC/LV",
+      "13",
+      "Bennett, Stetson 23/4"
+    ],
+    "RB": [
+      "36",
+      "Waters, Jordan"
+    ]
+  },
+  "Miami_Dolphins": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "17",
+      "Waddle, Jaylen 21/1",
+      "84",
+      "Ezukanma, Erik 22/4",
+      "19",
+      "Armstrong, Andrew",
+      "86",
+      "Black, Tarik"
+    ],
+    "RWR": [
+      "10",
+      "HILL, TYREEK T/KC",
+      "18",
+      "Westbrook-Ikhine, Nick U/Ten",
+      "81",
+      "Wease Jr., Theo",
+      "88",
+      "Henning, AJ"
+    ],
+    "SWR": [
+      "6",
+      "Washington, Malik 24/6",
+      "83",
+      "Washington, Tahj 24/7",
+      "82",
+      "Eskridge, Dee",
+      "48",
+      "Baldwin, Monaray"
+    ],
+    "LT": [
+      "52",
+      "Paul, Patrick 24/2",
+      "71",
+      "Smith, Kion",
+      "77",
+      "Hayes, Ryan 23/7",
+      "63",
+      "Kushi, Tedi"
+    ],
+    "LG": [
+      "78",
+      "Daniels, James U/Pit",
+      "76",
+      "Carman, Jackson",
+      "68",
+      "Priebe, Josh"
+    ],
+    "C": [
+      "55",
+      "Brewer, Aaron U/Ten",
+      "60",
+      "Meyer, Andrew",
+      "65",
+      "West, Addison"
+    ],
+    "RG": [
+      "72",
+      "Savaiinaea, Jonah 25/2",
+      "74",
+      "Eichenberg, Liam 21/2"
+    ],
+    "RT": [
+      "73",
+      "Jackson, Austin 20/1",
+      "79",
+      "Borom, Larry U/Chi",
+      "66",
+      "Daniels, Braeden P/Dal",
+      "70",
+      "Matos, Bayron CF24*"
+    ],
+    "TE": [
+      "87",
+      "Rucci, Hayden"
+    ],
+    "QB": [
+      "1",
+      "Tagovailoa, Tua 20/1",
+      "0",
+      "Wilson, Zach U/Den",
+      "14",
+      "Ewers, Quinn 25/7",
+      "16",
+      "Gabbert, Brett"
+    ],
+    "RB": [
+      "28",
+      "Achane, De'Von 23/3",
+      "25",
+      "Wright, Jaylen 24/4",
+      "8",
+      "Mattison, Alexander U/LV",
+      "31",
+      "Gordon II, Ollie 25/6",
+      "38",
+      "Noel, Nate"
+    ],
+    "FB": [
+      "30",
+      "Ingold, Alec U/LV"
+    ]
+  },
+  "Minnesota_Vikings": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "18",
+      "Jefferson, Justin 20/1",
+      "14",
+      "Jones, Tim U/Jax",
+      "81",
+      "Jackson, Lucky",
+      "82",
+      "Jones, Jeshaun"
+    ],
+    "RWR": [
+      "3",
+      "Addison, Jordan 23/1",
+      "13",
+      "Felton, Tai 25/3",
+      "89",
+      "Thomas, Thayer",
+      "19",
+      "Fleming, Dontae"
+    ],
+    "SWR": [
+      "1",
+      "Nailor, Jalen 22/6",
+      "4",
+      "Moore, Rondale U/Atl",
+      "83",
+      "Bolden, Silas",
+      "85",
+      "Lewis, Robert",
+      "31",
+      "Price, Myles"
+    ],
+    "LT": [
+      "71",
+      "Darrisaw, Christian 21/1",
+      "67",
+      "Skule, Justin U/TB",
+      "72",
+      "Watson IV, Leroy"
+    ],
+    "LG": [
+      "74",
+      "Jackson, Donovan 25/1",
+      "64",
+      "Brandel, Blake 20/6",
+      "60",
+      "Huber, Joe"
+    ],
+    "C": [
+      "78",
+      "KELLY, RYAN U/Ind",
+      "65",
+      "Jurgens, Michael 24/7",
+      "63",
+      "Correll, Zeke"
+    ],
+    "RG": [
+      "76",
+      "Fries, Will U/Ind",
+      "68",
+      "Byrd, Henry",
+      "79",
+      "Johnson, Marcellus"
+    ],
+    "RT": [
+      "75",
+      "O'Neill, Brian 18/2",
+      "73",
+      "Rouse, Walter 24/6",
+      "62",
+      "Brown, Logan"
+    ],
+    "TE": [
+      "87",
+      "Hockenson, T.J. T/Det",
+      "84",
+      "Oliver, Josh U/Bal",
+      "86",
+      "Bartholomew, Gavin 25/6",
+      "48",
+      "Yurosek, Ben",
+      "46",
+      "Nesbit, Bryson"
+    ],
+    "QB": [
+      "9",
+      "McCarthy, J.J. 24/1",
+      "8",
+      "Howell, Sam T/Sea",
+      "11",
+      "Rypien, Brett",
+      "12",
+      "Brosmer, Max"
+    ],
+    "RB": [
+      "33",
+      "JONES SR., AARON CC/GB",
+      "27",
+      "Mason, Jordan T/SF",
+      "32",
+      "Chandler, Ty 22/5",
+      "36",
+      "Scott, Zavier",
+      "38",
+      "Stewart, Tre"
+    ],
+    "FB": [
+      "30",
+      "HAM, C.J."
+    ]
+  },
+  "New_England_Patriots": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "8",
+      "DIGGS, STEFON U/Hou",
+      "9",
+      "Boutte, Kayshon 23/6",
+      "6",
+      "Baker, Javon 24/4",
+      "29",
+      "Webb, Jeremiah"
+    ],
+    "RWR": [
+      "13",
+      "HOLLINS, MACK U/Buf",
+      "84",
+      "Bourne, Kendrick U/SF",
+      "1",
+      "Polk, Ja'Lynn 24/2",
+      "83",
+      "Jiles, John"
+    ],
+    "SWR": [
+      "3",
+      "Douglas, DeMario 23/6",
+      "18",
+      "Williams, Kyle 25/3",
+      "86",
+      "Chism III, Efton",
+      "30",
+      "Blankumsee, DeMeer"
+    ],
+    "LT": [
+      "66",
+      "Campbell, Will 25/1",
+      "59",
+      "Lowe, Vederian T/Min",
+      "52",
+      "Bryant, Marcus 25/7"
+    ],
+    "LG": [
+      "69",
+      "Strange, Cole 22/1",
+      "72",
+      "SCHWEITZER, WES U/NYJ",
+      "55",
+      "Robinson, Tyrese P/Min",
+      "63",
+      "Butler, Mehki"
+    ],
+    "C": [
+      "65",
+      "Bradbury, Garrett CC/Min",
+      "58",
+      "Wilson, Jared 25/3",
+      "77",
+      "Brown, Ben P/LV"
+    ],
+    "RG": [
+      "71",
+      "Onwenu, Mike 20/6",
+      "64",
+      "Robinson, Layden 24/4",
+      "62",
+      "Sow, Sidy 23/4",
+      "74",
+      "Conley, Jack"
+    ],
+    "RT": [
+      "76",
+      "MOSES, MORGAN U/NYJ",
+      "70",
+      "Wallace, Caedan 24/3",
+      "75",
+      "Jacobs, Demontrey W/Den"
+    ],
+    "TE": [
+      "80",
+      "Scott Jr., Gee"
+    ],
+    "QB": [
+      "10",
+      "Maye, Drake 24/1",
+      "11",
+      "DOBBS, JOSHUA U/SF",
+      "17",
+      "Wooldridge, Ben"
+    ],
+    "RB": [
+      "26",
+      "Jennings, Terrell"
+    ],
+    "FB": [
+      "46",
+      "Lampe, Brock"
+    ]
+  },
+  "New_Orleans_Saints": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "12",
+      "Olave, Chris 22/1",
+      "16",
+      "Means, Bub 24/5",
+      "15",
+      "Tipton, Mason"
+    ],
+    "RWR": [
+      "10",
+      "COOKS, BRANDIN 14/1",
+      "81",
+      "Austin Jr., Kevin",
+      "24",
+      "Peoples-Jones, Donovan",
+      "84",
+      "Dixon, Moochie"
+    ],
+    "SWR": [
+      "22",
+      "Shaheed, Rashid",
+      "11",
+      "Wilson Jr., Cedrick U/Mia",
+      "17",
+      "Pettis, Dante",
+      "89",
+      "Tyree, Chris"
+    ],
+    "LT": [
+      "71",
+      "Banks Jr., Kelvin 25/1",
+      "79",
+      "Ball, Josh P/Dal",
+      "73",
+      "Kilty, Easton"
+    ],
+    "LG": [
+      "70",
+      "Penning, Trevor 22/1",
+      "77",
+      "Radunz, Dillon U/Ten",
+      "60",
+      "Hergel, Kyle"
+    ],
+    "C": [
+      "78",
+      "McCoy, Erik 19/2",
+      "76",
+      "Clapp, Will 18/7"
+    ],
+    "RG": [
+      "51",
+      "Ruiz, Cesar 20/1",
+      "64",
+      "Saldiveri, Nick 23/4",
+      "68",
+      "Simpkins III, Torricelli"
+    ],
+    "RT": [
+      "75",
+      "Fuaga, Taliese 24/1",
+      "67",
+      "Young, Landon 21/6",
+      "72",
+      "Ezirim, Josiah 24/7"
+    ],
+    "TE": [
+      "85",
+      "Holker, Dallin",
+      "88",
+      "Stoll, Jack U/Mia",
+      "82",
+      "Welch, Treyton"
+    ],
+    "QB": [
+      "6",
+      "Shough, Tyler 25/2",
+      "2",
+      "Rattler, Spencer 24/5",
+      "3",
+      "Haener, Jake 23/4",
+      "18",
+      "Dekkers, Hunter"
+    ],
+    "RB": [
+      "13",
+      "Jones Jr., Velus U/Car",
+      "34",
+      "Yarns, Marcus"
+    ]
+  },
+  "New_York_Giants": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "1",
+      "Nabers, Malik 24/1",
+      "83",
+      "PASCAL, ZACH U/Arz",
+      "88",
+      "Ford-Wheaton, Bryce",
+      "9",
+      "Felton, Da'Quan"
+    ],
+    "RWR": [
+      "18",
+      "Slayton, Darius 19/5",
+      "13",
+      "Hyatt, Jalin 23/3",
+      "80",
+      "Washington, Montrell",
+      "2",
+      "Wells Jr., Juice",
+      "8",
+      "Collins, Beaux"
+    ],
+    "SWR": [
+      "17",
+      "Robinson, Wan'Dale 22/2",
+      "87",
+      "Smith-Marsette, Ihmir",
+      "81",
+      "Humphrey, Lil'Jordan U/Den",
+      "12",
+      "Bly, Jordan",
+      "5",
+      "Cambre, Dalen"
+    ],
+    "LT": [
+      "78",
+      "Thomas, Andrew 20/1",
+      "55",
+      "Hudson III, James U/Cle",
+      "70",
+      "Forsythe, Stone U/Sea"
+    ],
+    "LG": [
+      "76",
+      "Runyan, Jon U/GB",
+      "64",
+      "STINNIE, AARON U/TB",
+      "75",
+      "Ezeudu, Joshua 22/3"
+    ],
+    "C": [
+      "61",
+      "Schmitz Jr., John Michael 23/2",
+      "65",
+      "Schlottmann, Austin U/Min",
+      "67",
+      "Morrissey, Jimmy",
+      "60",
+      "Hudson, Bryan"
+    ],
+    "RG": [
+      "74",
+      "VAN ROTEN, GREG U/LV",
+      "73",
+      "Neal, Evan 22/1",
+      "63",
+      "Kubas, Jake"
+    ],
+    "RT": [
+      "72",
+      "ELUEMUNOR, JERMAINE U/LV",
+      "71",
+      "Mbow, Marcus 25/5",
+      "68",
+      "Williams, Jaison"
+    ],
+    "TE": [
+      "48",
+      "Terry II, Jermaine"
+    ],
+    "QB": [
+      "3",
+      "WILSON, RUSSELL U/Pit",
+      "19",
+      "WINSTON, JAMEIS U/Cle",
+      "6",
+      "Dart, Jaxson 25/1",
+      "15",
+      "DeVito, Tommy"
+    ],
+    "RB": [
+      "36",
+      "Baker, Rushawn"
+    ]
+  },
+  "New_York_Jets": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "5",
+      "Wilson, Garrett 22/1",
+      "16",
+      "Johnson, Tyler U/LAR",
+      "19",
+      "Charles, Irvin",
+      "81",
+      "Wilson, Ontaria"
+    ],
+    "RWR": [
+      "83",
+      "REYNOLDS, JOSH CC/Jax",
+      "82",
+      "Smith, Arian 25/4",
+      "87",
+      "Smith, Brandon",
+      "39",
+      "Skinner, Quentin"
+    ],
+    "SWR": [
+      "10",
+      "Lazard, Allen U/GB",
+      "6",
+      "Corley, Malachi 24/3",
+      "3",
+      "Gipson, Xavier",
+      "36",
+      "Pritchett, Jamaal",
+      "35",
+      "Miller, Dymere"
+    ],
+    "LT": [
+      "74",
+      "Fashanu, Olu 24/1",
+      "67",
+      "Warren, Carter 23/4",
+      "68",
+      "Eze, Obinna"
+    ],
+    "LG": [
+      "76",
+      "Simpson, John U/Bal",
+      "65",
+      "Newman, Xavier",
+      "60",
+      "Levao, Kohl"
+    ],
+    "C": [
+      "66",
+      "Tippmann, Joe 23/2",
+      "71",
+      "Myers, Josh U/GB",
+      "63",
+      "Hartwig, Gus"
+    ],
+    "RG": [
+      "75",
+      "Vera-Tucker, Alijah 21/1",
+      "61",
+      "Mitchell, Max 22/4",
+      "64",
+      "Wiegand, Leander SF25*"
+    ],
+    "RT": [
+      "70",
+      "Membou, Armand 25/1",
+      "79",
+      "Okorafor, Chukwuma",
+      "78",
+      "Bailey, Zack"
+    ],
+    "TE": [
+      "85",
+      "Taylor, Mason 25/2",
+      "89",
+      "Ruckert, Jeremy 22/3",
+      "84",
+      "Smartt, Stone U/LAC",
+      "88",
+      "Kuntz, Zack 23/7",
+      "86",
+      "Johnson, Neal"
+    ],
+    "QB": [
+      "7",
+      "Fields, Justin U/Pit",
+      "2",
+      "TAYLOR, TYROD U/NYG",
+      "15",
+      "Martinez, Adrian",
+      "4",
+      "Cook, Brady"
+    ],
+    "RB": [
+      "38",
+      "Evans, Zach"
+    ],
+    "FB": [
+      "47",
+      "Beck, Andrew"
+    ]
+  },
+  "Philadelphia_Eagles": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "11",
+      "Brown, A.J. T/Ten",
+      "89",
+      "Wilson, Johnny 24/6",
+      "86",
+      "Cooks, Elijah",
+      "41",
+      "Cooper, Darius"
+    ],
+    "RWR": [
+      "2",
+      "Dotson, Jahan T/Was",
+      "46",
+      "Marshall, Terrace U/LV",
+      "80",
+      "Gray, Danny",
+      "Adeyi, Ife"
+    ],
+    "SWR": [
+      "6",
+      "Smith, DeVonta 21/1",
+      "82",
+      "Smith, Ainias 24/5",
+      "45",
+      "Morin, Taylor",
+      "42",
+      "Jackson, Giles"
+    ],
+    "LT": [
+      "68",
+      "Mailata, Jordan 18/7",
+      "74",
+      "LAMM, KENDALL U/Mia",
+      "73",
+      "Williams, Cameron 25/6"
+    ],
+    "LG": [
+      "69",
+      "Dickerson, Landon 21/2",
+      "79",
+      "PRYOR, MATT 18/6",
+      "77",
+      "Keegan, Trevor 24/5",
+      "Tate, Marcus"
+    ],
+    "C": [
+      "51",
+      "Jurgens, Cam 22/2",
+      "66",
+      "Kendall, Drew 25/5",
+      "64",
+      "Toth, Brett"
+    ],
+    "RG": [
+      "56",
+      "Steen, Tyler 23/3",
+      "76",
+      "Green, Kenyon T/Hou",
+      "67",
+      "Vakalahi, Laekin CF24*"
+    ],
+    "RT": [
+      "65",
+      "JOHNSON, LANE 13/1",
+      "78",
+      "Hinton, Myles 25/6",
+      "72",
+      "Kinnard, Darian",
+      "63",
+      "Pierce, Hollin"
+    ],
+    "TE": [
+      "84",
+      "Jenkins, E.J.",
+      "49",
+      "Latu, Cameron"
+    ],
+    "QB": [
+      "1",
+      "Hurts, Jalen 20/2",
+      "16",
+      "McKee, Tanner 23/6",
+      "19",
+      "McCord, Kyle 25/6",
+      "14",
+      "Thompson-Robinson, Dorian T/Cle"
+    ],
+    "RB": [
+      "37",
+      "Nichols, Lew",
+      "39",
+      "Powell, ShunDerrick"
+    ],
+    "FB": [
+      "43",
+      "VanSumeren, Ben"
+    ]
+  },
+  "Pittsburgh_Steelers": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "4",
+      "Metcalf, DK T/Sea",
+      "13",
+      "Miller, Scotty U/Atl",
+      "81",
+      "Taylor, Roc",
+      "21",
+      "Lemonious-Craig, Montana"
+    ],
+    "RWR": [
+      "16",
+      "WOODS, ROBERT U/Hou",
+      "10",
+      "Wilson, Roman 24/3",
+      "11",
+      "Johnson, Brandon"
+    ],
+    "SWR": [
+      "19",
+      "Austin III, Calvin 22/4",
+      "15",
+      "Skowronek, Ben",
+      "82",
+      "McCutcheon, Lance",
+      "85",
+      "Williams, Ke'Shawn"
+    ],
+    "LT": [
+      "77",
+      "Jones, Broderick 23/1",
+      "60",
+      "Cook, Dylan",
+      "78",
+      "Warren, Gareth"
+    ],
+    "LG": [
+      "73",
+      "SEUMALO, ISAAC U/Phi",
+      "61",
+      "Broeker, Nick",
+      "71",
+      "Williams, Aiden"
+    ],
+    "C": [
+      "54",
+      "Frazier, Zach 24/2",
+      "74",
+      "Anderson, Spencer 23/7",
+      "62",
+      "McCollum, Ryan W/Det"
+    ],
+    "RG": [
+      "66",
+      "McCormick, Mason 24/4",
+      "64",
+      "Scharping, Max P/Was",
+      "79",
+      "Jones, Steven"
+    ],
+    "RT": [
+      "76",
+      "Fautanu, Troy 24/1",
+      "67",
+      "Anderson, Calvin",
+      "72",
+      "Nester, Doug"
+    ],
+    "TE": [
+      "88",
+      "Freiermuth, Pat 21/2",
+      "80",
+      "Washington, Darnell 23/3",
+      "89",
+      "Parham Jr., Donald",
+      "87",
+      "Galbreath, JJ"
+    ],
+    "QB": [
+      "2",
+      "Rudolph, Mason 18/3",
+      "18",
+      "Howard, Will 25/6",
+      "17",
+      "Thompson, Skylar"
+    ],
+    "RB": [
+      "84",
+      "PATTERSON, CORDARRELLE U/Atl",
+      "35",
+      "Ward, Jonathan U/Ten",
+      "34",
+      "Hurleman, Max"
+    ],
+    "FB": [
+      "83",
+      "Heyward, Connor 22/6",
+      "48",
+      "Thomas-Jones, DJ"
+    ]
+  },
+  "San_Francisco_49ers": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "11",
+      "Aiyuk, Brandon 20/1",
+      "5",
+      "ROBINSON, DEMARCUS U/LAR",
+      "18",
+      "Hodgins, Isaiah",
+      "Knowles, Malik"
+    ],
+    "RWR": [
+      "14",
+      "Pearsall, Ricky 24/1",
+      "17",
+      "Watkins, Jordan 25/4",
+      "83",
+      "Owens, Terique",
+      "14",
+      "Neyor, Isaiah"
+    ],
+    "SWR": [
+      "15",
+      "Jennings, Jauan 20/7",
+      "19",
+      "Cowing, Jacob 24/4",
+      "86",
+      "Bergen, Junior 25/7",
+      "84",
+      "Gage Jr., Russell"
+    ],
+    "LT": [
+      "71",
+      "WILLIAMS, TRENT T/Was",
+      "65",
+      "Dillard, Andre U/GB",
+      "60",
+      "Gutierrez, Sebastian"
+    ],
+    "LG": [
+      "78",
+      "Bartch, Ben P/Jax",
+      "74",
+      "Burford, Spencer 22/4",
+      "75",
+      "Colby, Connor 25/7",
+      "69",
+      "JOHNSON, ZACK"
+    ],
+    "C": [
+      "64",
+      "BRENDEL, JAKE",
+      "61",
+      "Hennessy, Matt P/Atl",
+      "66",
+      "Nugent, Drake"
+    ],
+    "RG": [
+      "77",
+      "Puni, Dominick 24/3",
+      "63",
+      "Zakelj, Nick 22/6",
+      "55",
+      "Moss, Drew"
+    ],
+    "RT": [
+      "68",
+      "McKivitz, Colton 20/5",
+      "62",
+      "Pleasants, Austen",
+      "67",
+      "Alarcon, Isaac SF24*"
+    ],
+    "TE": [
+      "48",
+      "Pline, Mason"
+    ],
+    "QB": [
+      "13",
+      "Purdy, Brock 22/7",
+      "10",
+      "Jones, Mac U/Jax",
+      "4",
+      "Rourke, Kurtis 25/7",
+      "4",
+      "Mordecai, Tanner"
+    ],
+    "RB": [
+      "49",
+      "Kiner, Corey"
+    ],
+    "FB": [
+      "44",
+      "JUSZCZYK, KYLE U/Bal"
+    ]
+  },
+  "Seattle_Seahawks": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "10",
+      "KUPP, COOPER CC/LAR",
+      "15",
+      "Horton, Tory 25/5",
+      "82",
+      "White, Cody",
+      "85",
+      "Broden, Tyrone"
+    ],
+    "RWR": [
+      "1",
+      "VALDES-SCANTLING, MARQUEZ U/NO",
+      "19",
+      "Bobo, Jake",
+      "83",
+      "Young, Dareke 22/7",
+      "35",
+      "Foster Jr., Montorie"
+    ],
+    "SWR": [
+      "11",
+      "Smith-Njigba, Jaxon 23/1",
+      "86",
+      "White III, Ricky 25/7",
+      "84",
+      "Sims, Steven U/Bal",
+      "17",
+      "Plumlee, John Rhys"
+    ],
+    "LT": [
+      "67",
+      "Cross, Charles 22/1",
+      "74",
+      "Jones, Josh U/Bal",
+      "78",
+      "Richman, Mason 25/7"
+    ],
+    "LG": [
+      "76",
+      "Zabel, Grey 25/1",
+      "75",
+      "Bradford, Anthony 23/4"
+    ],
+    "C": [
+      "55",
+      "Oluwatimi, Olu 23/5",
+      "61",
+      "Sundell, Jalen",
+      "62",
+      "Maranges, Federico CF25*"
+    ],
+    "RG": [
+      "64",
+      "Haynes, Christian 24/3",
+      "63",
+      "Laumea, Sataoa 24/6",
+      "77",
+      "Cabeldue, Bryce 25/6"
+    ],
+    "RT": [
+      "72",
+      "Lucas, Abraham 22/3",
+      "65",
+      "Jerrell, Michael 24/6",
+      "79",
+      "Kight, Amari"
+    ],
+    "TE": [
+      "49",
+      "Lang, Marshall",
+      "Van Vooren, Mitch"
+    ],
+    "QB": [
+      "14",
+      "Darnold, Sam U/Min",
+      "2",
+      "Lock, Drew U/NYG",
+      "6",
+      "Milroe, Jalen 25/3"
+    ],
+    "RB": [
+      "31",
+      "Wright, Jacardia"
+    ],
+    "FB": [
+      "40",
+      "Ouzts, Robbie 25/5",
+      "38",
+      "Russell, Brady P/Phi"
+    ]
+  },
+  "Tampa_Bay_Buccaneers": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "13",
+      "EVANS, MIKE 14/1",
+      "10",
+      "Palmer, Trey 23/6",
+      "18",
+      "Jarrett, Rakim",
+      "89",
+      "Houston, Dennis"
+    ],
+    "RWR": [
+      "14",
+      "Godwin, Chris 17/3",
+      "15",
+      "McMillan, Jalen 24/3",
+      "81",
+      "Miller, Ryan",
+      "85",
+      "Greene, Garrett"
+    ],
+    "SWR": [
+      "9",
+      "Egbuka, Emeka 25/1",
+      "17",
+      "SHEPARD, STERLING U/NYG",
+      "83",
+      "Johnson, Tez 25/7",
+      "19",
+      "Johnson, Kameron"
+    ],
+    "LT": [
+      "78",
+      "Wirfs, Tristan 20/1",
+      "77",
+      "Heck, Charlie U/SF",
+      "70",
+      "Chukwuma, Ben"
+    ],
+    "LG": [
+      "68",
+      "Bredeson, Ben U/NYG",
+      "76",
+      "Opeta, Sua U/Phi",
+      "75",
+      "O'Neal, Raiqwon"
+    ],
+    "C": [
+      "62",
+      "Barton, Graham 24/1",
+      "65",
+      "Majors, Jake",
+      "66",
+      "Scott, Ben"
+    ],
+    "RG": [
+      "69",
+      "Mauch, Cody 23/2",
+      "79",
+      "Klein, Elijah 24/6",
+      "72",
+      "Haggard, Luke"
+    ],
+    "RT": [
+      "67",
+      "Goedeke, Luke 22/2",
+      "61",
+      "Dzansi, Silas",
+      "74",
+      "Greenfield, Garret",
+      "71",
+      "Metz, Lorenz SF24*"
+    ],
+    "TE": [
+      "88",
+      "Otton, Cade 22/4",
+      "87",
+      "Durham, Payne 23/5",
+      "41",
+      "Kieft, Ko 22/6",
+      "82",
+      "Culp, Devin 24/7",
+      "84",
+      "Taula, Tanner"
+    ],
+    "QB": [
+      "6",
+      "MAYFIELD, BAKER U/LAR",
+      "2",
+      "Trask, Kyle 21/2",
+      "11",
+      "Pratt, Michael",
+      "8",
+      "Bazelak, Connor"
+    ],
+    "RB": [
+      "7",
+      "Irving, Bucky 24/4",
+      "1",
+      "White, Rachaad 22/3",
+      "44",
+      "Tucker, Sean",
+      "30",
+      "Williams, D.J.",
+      "37",
+      "Williams, Josh"
+    ]
+  },
+  "Tennessee_Titans": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "11",
+      "Jefferson, Van U/Pit",
+      "5",
+      "Ayomanor, Elic 25/4",
+      "16",
+      "Burks, Treylon 22/1",
+      "14",
+      "Dowell, Colton 23/7"
+    ],
+    "RWR": [
+      "0",
+      "RIDLEY, CALVIN U/Jax",
+      "17",
+      "Dike, Chimere 25/4",
+      "80",
+      "Oliver, Bryce",
+      "13",
+      "Proche II, James U/Cle"
+    ],
+    "SWR": [
+      "4",
+      "LOCKETT, TYLER CC/Sea",
+      "87",
+      "Restrepo, Xavier",
+      "19",
+      "Jackson, Jha'Quan 24/6",
+      "12",
+      "Kinsey, Mason",
+      "82",
+      "Sheffield, TJ"
+    ],
+    "LT": [
+      "75",
+      "Moore Jr., Dan U/Pit",
+      "72",
+      "Udoh, Olisaemeka U/NO",
+      "61",
+      "Ojukwu, John"
+    ],
+    "LG": [
+      "77",
+      "Skoronski, Peter 23/1",
+      "64",
+      "Slater, Jackson 25/5",
+      "60",
+      "Mustipher, Sam U/LAC",
+      "67",
+      "Brewer, Chandler"
+    ],
+    "C": [
+      "79",
+      "Cushenberry III, Lloyd U/Den",
+      "66",
+      "Jaimes, Brenden U/LAC",
+      "62",
+      "LEVIN, COREY 17/6"
+    ],
+    "RG": [
+      "70",
+      "ZEITLER, KEVIN U/Det",
+      "73",
+      "Hance, Blake U/Jax",
+      "76",
+      "Rupcich, Andrew"
+    ],
+    "RT": [
+      "55",
+      "Latham, JC 24/1",
+      "71",
+      "Duncan, Jaelyn 23/6",
+      "78",
+      "Crenshaw-Dickson, Brandon"
+    ],
+    "TE": [
+      "86",
+      "Dabney, Drake"
+    ],
+    "QB": [
+      "1",
+      "Ward, Cameron 25/1",
+      "8",
+      "Levis, Will 23/2",
+      "10",
+      "ALLEN, BRANDON U/SF",
+      "15",
+      "BOYLE, TIM U/NYG"
+    ],
+    "RB": [
+      "20",
+      "Pollard, Tony U/Dal",
+      "2",
+      "Spears, Tyjae 23/3",
+      "36",
+      "Chestnut, Julius",
+      "28",
+      "Mullings, Kalel 25/6",
+      "Davis-Price, Tyrion"
+    ]
+  },
+  "Washington_Commanders": {
+    "Pos": [
+      "No.",
+      "Player 1",
+      "No",
+      "Player 2",
+      "No",
+      "Player 3",
+      "No",
+      "Player 4",
+      "No",
+      "Player 5"
+    ],
+    "LWR": [
+      "17",
+      "McLaurin, Terry 19/3",
+      "13",
+      "Osborn, K.J. W/NE",
+      "12",
+      "Gallup, Michael",
+      "10",
+      "Jones, Jacoby"
+    ],
+    "RWR": [
+      "85",
+      "Brown, Noah",
+      "11",
+      "McCaffrey, Luke 24/3",
+      "16",
+      "Brooks, Ja'Corey",
+      "84",
+      "Strachan, Mike"
+    ],
+    "SWR": [
+      "1",
+      "Samuel, Deebo T/SF",
+      "83",
+      "Lane, Jaylin 25/4",
+      "19",
+      "MOORE, CHRIS",
+      "24",
+      "Allen, Kazmeir"
+    ],
+    "LT": [
+      "78",
+      "TUNSIL, LAREMY T/Hou",
+      "73",
+      "SCOTT, TRENT U/Pit",
+      "79",
+      "Sarell, Foster U/LAC"
+    ],
+    "LG": [
+      "67",
+      "Allegretti, Nick U/KC",
+      "53",
+      "HERBIG, NATE U/Pit",
+      "75",
+      "Paul, Chris 22/7"
+    ],
+    "C": [
+      "63",
+      "Biadasz, Tyler U/Dal",
+      "60",
+      "Deiter, Michael U/Hou",
+      "61",
+      "Good-Jones, Julian P/Phi"
+    ],
+    "RG": [
+      "76",
+      "Cosmi, Sam 21/2",
+      "71",
+      "WYLIE, ANDREW U/KC",
+      "68",
+      "McKay, Timothy"
+    ],
+    "RT": [
+      "74",
+      "Coleman, Brandon 24/3",
+      "72",
+      "Conerly Jr., Josh 25/1",
+      "51",
+      "HART, BOBBY",
+      "62",
+      "Phillips, Tyre"
+    ],
+    "TE": [
+      "88",
+      "Turner, Cole 22/5",
+      "89",
+      "Cager, Lawrence"
+    ],
+    "QB": [
+      "5",
+      "Daniels, Jayden 24/1",
+      "18",
+      "MARIOTA, MARCUS U/Phi",
+      "14",
+      "JOHNSON, JOSH U/Bal",
+      "15",
+      "Hartman, Sam"
+    ],
+    "RB": [
+      "36",
+      "Rodriguez Jr., Chris 23/6",
+      "25",
+      "Felton, Demetric"
+    ]
+  }
+}
